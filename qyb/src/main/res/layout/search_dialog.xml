@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:layout_gravity="center"
+    >
+
+
+    <android.support.v7.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        card_view:cardBackgroundColor="#FFFFFF"
+        card_view:cardCornerRadius="30dp"
+        card_view:cardPreventCornerOverlap="true"
+        card_view:cardUseCompatPadding="true"
+        card_view:cardElevation="5dp"
+        card_view:contentPadding="5dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+        <TextView
+            android:background="#ffff337b"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            style="@style/textSytle"
+            android:text="想要什么宝贝呢，同学？"
+            android:gravity="center"
+            />
+        <EditText
+            android:id="@+id/ed_search"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center"
+            android:layout_width="260dp"
+            android:layout_height="40dp"
+            android:background="@drawable/edittext_background"
+            />
+            <Button
+                android:id="@+id/btn_search"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center"
+                android:text="搜一下"
+                style="@style/textSytle"
+                android:background="@drawable/button"
+                />
+        </LinearLayout>
+</android.support.v7.widget.CardView>
+
+</LinearLayout>

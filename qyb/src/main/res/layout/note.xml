@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:orientation="vertical"
+        >
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:lines="5"
+            android:gravity="left"
+            android:textSize="14sp"
+            android:padding="5dp"
+            android:hint="写下您的心语..."
+            android:background="@null"
+            />
+        <ImageView
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:src="@drawable/add"
+            />
+        </LinearLayout>
+    <include layout="@layout/divider_line"/>
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="#ffffff"
+        android:gravity="center"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="匿名发表"
+            android:layout_marginLeft="5dp"
+            android:textColor="#515151"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="更多"
+            android:gravity="right"
+            android:layout_marginRight="5dp"
+            android:drawableRight="@drawable/left1"
+            />
+
+
+    </LinearLayout>
+
+</LinearLayout>

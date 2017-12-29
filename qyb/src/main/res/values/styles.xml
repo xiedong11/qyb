@@ -1,0 +1,102 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+
+        <!--   ActionBar颜色 -->
+        <item name="colorPrimary">@color/appBaseColor</item>
+        <!--   状态栏颜色 -->
+        <item name="colorPrimaryDark">#C2185B</item>
+        <!--   控件颜色 -->
+        <item name="colorAccent">@color/appBaseColor</item>
+        <!-- 背景色 -->
+>
+        <!-- 键盘区域颜色 -->
+
+        <!--标题栏字体颜色-->
+        <item name="android:textColorPrimary">#ef0b904f</item>
+        <!--内容区域字体颜色-->
+        <item name="android:textColor">#db40043a</item>
+    </style>
+    <style name="ItemActivity" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+
+        <!--   ActionBar颜色 -->
+        <item name="colorPrimary">#00796B</item>
+        <!--   状态栏颜色 -->
+        <item name="colorPrimaryDark">#00796B</item>
+        <!--   控件颜色 -->
+        <item name="colorAccent">#ff9cbdff</item>
+        <!-- 背景色 -->
+
+        <item name="android:textColorSecondary">#ffffff</item>
+        <!-- 键盘区域颜色 -->
+
+        <!--标题栏字体颜色-->
+        <item name="android:textColorPrimary">#ef0b904f</item>
+        <!--内容区域字体颜色-->
+        <item name="android:textColor">#db40043a</item>
+    </style>
+
+
+    <!--自习室aitivity的主题-->
+    <style name="ZXSActivity" parent="Theme.AppCompat.Light.NoActionBar">
+
+        <!--   状态栏颜色 -->
+        <item name="colorPrimaryDark">#00796B</item>
+        <!--设置溢出菜单（三个小圆点）跟bar上图标的颜色-->
+        <item name="android:textColorSecondary">#FFFFFF</item>
+
+    </style>
+
+    <!--附加功能的主题-->
+    <style name="extral_school" parent="Theme.AppCompat.Light.NoActionBar">
+
+        <!--   状态栏颜色 -->
+        <item name="colorPrimaryDark">#00796B</item>
+        <!--设置溢出菜单（三个小圆点）跟bar上图标的颜色-->
+        <item name="android:textColorSecondary">#FFFFFF</item>
+
+    </style>
+
+    <!--成绩查询aitivity的主题-->
+    <style name="queryGrade" parent="Theme.AppCompat.Light.NoActionBar">
+
+        <!--   状态栏颜色 -->
+        <item name="colorPrimaryDark">#303F9F</item>
+        <!--设置溢出菜单（三个小圆点）跟bar上图标的颜色-->
+        <item name="android:textColorSecondary">#FFFFFF</item>
+
+    </style>
+
+    <style name="fragment_text">
+        <item name="android:textColor">#ffacacac</item>
+        <item name="android:textSize">25sp</item>
+    </style>
+    <!--字体样式-->
+    <style name="textSytle">
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:textStyle">italic|normal</item>
+    </style>
+
+    <!--项目按钮样式-->
+    <style name="btnStyle">
+        <item name="android:background">@drawable/button</item>
+
+    </style>
+
+    <!--editText样式-->
+    <style name="edittextStyle">
+
+        <item name="android:background">@drawable/edittext_background</item>
+    </style>
+
+    <!--设置界面的edittext字体样式-->
+    <style name="setting_edittext_text_style">
+        <item name="android:paddingRight">10dp</item>
+        <item name="android:background">@null</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">#99212121</item>
+    </style>
+</resources>

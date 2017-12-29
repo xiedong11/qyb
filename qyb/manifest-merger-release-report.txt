@@ -1,0 +1,317 @@
+-- Merging decision tree log ---
+manifest
+ADDED from AndroidManifest.xml:2:1
+	package
+		ADDED from AndroidManifest.xml:3:5
+		INJECTED from AndroidManifest.xml:0:0
+		INJECTED from AndroidManifest.xml:0:0
+	android:versionName
+		INJECTED from AndroidManifest.xml:0:0
+		INJECTED from AndroidManifest.xml:0:0
+	xmlns:android
+		ADDED from AndroidManifest.xml:2:11
+	android:versionCode
+		INJECTED from AndroidManifest.xml:0:0
+		INJECTED from AndroidManifest.xml:0:0
+uses-permission#android.permission.MOUNT_UNMOUNT_FILESYSTEMS
+ADDED from AndroidManifest.xml:6:5
+	android:name
+		ADDED from AndroidManifest.xml:6:22
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from AndroidManifest.xml:8:5
+	android:name
+		ADDED from AndroidManifest.xml:8:22
+uses-feature#android.hardware.camera
+ADDED from AndroidManifest.xml:10:5
+	android:name
+		ADDED from AndroidManifest.xml:10:19
+uses-feature#android.hardware.camera.autofocus
+ADDED from AndroidManifest.xml:11:5
+	android:name
+		ADDED from AndroidManifest.xml:11:19
+uses-permission#android.permission.INTERNET
+ADDED from AndroidManifest.xml:14:5
+	android:name
+		ADDED from AndroidManifest.xml:14:22
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from AndroidManifest.xml:16:5
+	android:name
+		ADDED from AndroidManifest.xml:16:22
+uses-permission#android.permission.ACCESS_WIFI_STATE
+ADDED from AndroidManifest.xml:18:5
+	android:name
+		ADDED from AndroidManifest.xml:18:22
+uses-permission#android.permission.WAKE_LOCK
+ADDED from AndroidManifest.xml:20:5
+	android:name
+		ADDED from AndroidManifest.xml:20:22
+uses-permission#android.permission.READ_PHONE_STATE
+ADDED from AndroidManifest.xml:24:5
+	android:name
+		ADDED from AndroidManifest.xml:24:22
+uses-permission#android.permission.RECEIVE_USER_PRESENT
+ADDED from AndroidManifest.xml:36:5
+	android:name
+		ADDED from AndroidManifest.xml:36:22
+uses-permission#android.permission.RECEIVE_BOOT_COMPLETED
+ADDED from AndroidManifest.xml:37:5
+	android:name
+		ADDED from AndroidManifest.xml:37:22
+uses-permission#android.permission.VIBRATE
+ADDED from AndroidManifest.xml:40:5
+	android:name
+		ADDED from AndroidManifest.xml:40:22
+uses-permission#android.permission.CALL_PHONE
+ADDED from AndroidManifest.xml:42:5
+	android:name
+		ADDED from AndroidManifest.xml:42:22
+application
+ADDED from AndroidManifest.xml:44:5
+MERGED from com.android.support:appcompat-v7:22.2.1:22:5
+MERGED from com.android.support:support-v4:22.2.1:22:5
+MERGED from cn.pedant.sweetalert:library:1.3:11:5
+MERGED from com.pnikosis:materialish-progress:1.0:11:5
+MERGED from com.android.support:appcompat-v7:22.2.1:22:5
+MERGED from com.android.support:support-v4:22.2.1:22:5
+MERGED from com.github.erd:android-volley:1.0.0:5:5
+MERGED from com.github.d-max:spots-dialog:0.7:12:5
+MERGED from com.robinhood.ticker:ticker:1.1.0:10:5
+MERGED from com.android.support:cardview-v7:22.2.1:22:5
+MERGED from com.android.support:support-v4:22.2.1:22:5
+MERGED from com.jiechic.library:xUtils:2.6.14:11:5
+MERGED from com.android.support:design:22.2.1:22:5
+MERGED from com.android.support:appcompat-v7:22.2.1:22:5
+MERGED from com.android.support:support-v4:22.2.1:22:5
+MERGED from com.android.support:support-v4:22.2.1:22:5
+MERGED from com.android.support:support-v4:22.2.1:22:5
+MERGED from com.github.chenupt.android:springindicator:1.0.2:11:5
+	android:label
+		ADDED from AndroidManifest.xml:48:9
+	android:allowBackup
+		ADDED from AndroidManifest.xml:46:9
+	android:icon
+		ADDED from AndroidManifest.xml:47:9
+	android:theme
+		ADDED from AndroidManifest.xml:49:9
+	android:name
+		ADDED from AndroidManifest.xml:45:9
+activity#cn.bmob.v3.update.UpdateDialogActivity
+ADDED from AndroidManifest.xml:52:9
+	android:theme
+		ADDED from AndroidManifest.xml:54:13
+	android:name
+		ADDED from AndroidManifest.xml:53:13
+activity#com.zhuandian.qxe.MenuActivity
+ADDED from AndroidManifest.xml:56:9
+	android:label
+		ADDED from AndroidManifest.xml:58:13
+	android:name
+		ADDED from AndroidManifest.xml:57:13
+activity#com.zhuandian.qxe.GuideView.StartFirst
+ADDED from AndroidManifest.xml:60:9
+	android:name
+		ADDED from AndroidManifest.xml:60:19
+intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
+ADDED from AndroidManifest.xml:61:13
+action#android.intent.action.MAIN
+ADDED from AndroidManifest.xml:62:17
+	android:name
+		ADDED from AndroidManifest.xml:62:25
+category#android.intent.category.LAUNCHER
+ADDED from AndroidManifest.xml:64:17
+	android:name
+		ADDED from AndroidManifest.xml:64:27
+activity#com.zhuandian.qxe.MainFrame.esGoods.ItemActivity
+ADDED from AndroidManifest.xml:67:9
+	android:theme
+		ADDED from AndroidManifest.xml:69:13
+	android:name
+		ADDED from AndroidManifest.xml:68:13
+activity#com.zhuandian.qxe.MainFrame.schoolNews.NewsItemActivity
+ADDED from AndroidManifest.xml:70:9
+	android:theme
+		ADDED from AndroidManifest.xml:72:13
+	android:name
+		ADDED from AndroidManifest.xml:71:13
+activity#com.zhuandian.qxe.service.LoginActivity
+ADDED from AndroidManifest.xml:73:9
+	android:name
+		ADDED from AndroidManifest.xml:73:19
+activity#com.zhuandian.qxe.ExtralModule.wkzxs.ZHLActivity
+ADDED from AndroidManifest.xml:75:9
+	android:theme
+		ADDED from AndroidManifest.xml:77:13
+	android:name
+		ADDED from AndroidManifest.xml:76:13
+activity#com.zhuandian.qxe.ExtralModule.wkzxs.XLActivity
+ADDED from AndroidManifest.xml:78:9
+	android:theme
+		ADDED from AndroidManifest.xml:80:13
+	android:name
+		ADDED from AndroidManifest.xml:79:13
+activity#com.zhuandian.qxe.ExtralModule.wkzxs.WSLActivity
+ADDED from AndroidManifest.xml:81:9
+	android:theme
+		ADDED from AndroidManifest.xml:83:13
+	android:name
+		ADDED from AndroidManifest.xml:82:13
+activity#com.zhuandian.qxe.ExtralModule.gradeQuery.QueryGradeActivity
+ADDED from AndroidManifest.xml:84:9
+	android:theme
+		ADDED from AndroidManifest.xml:86:13
+	android:name
+		ADDED from AndroidManifest.xml:85:13
+activity#com.zhuandian.qxe.ExtralModule.CommunityActivity
+ADDED from AndroidManifest.xml:87:9
+	android:theme
+		ADDED from AndroidManifest.xml:89:13
+	android:name
+		ADDED from AndroidManifest.xml:88:13
+activity#com.zhuandian.qxe.ExtralModule.EmployActivity
+ADDED from AndroidManifest.xml:90:9
+	android:theme
+		ADDED from AndroidManifest.xml:92:13
+	android:name
+		ADDED from AndroidManifest.xml:91:13
+activity#com.zhuandian.qxe.ExtralModule.TestCalendar
+ADDED from AndroidManifest.xml:93:9
+	android:theme
+		ADDED from AndroidManifest.xml:95:13
+	android:name
+		ADDED from AndroidManifest.xml:94:13
+activity#com.zhuandian.qxe.ExtralModule.Postgraduate_Plan
+ADDED from AndroidManifest.xml:96:9
+	android:theme
+		ADDED from AndroidManifest.xml:98:13
+	android:name
+		ADDED from AndroidManifest.xml:97:13
+activity#com.zhuandian.qxe.ExtralModule.StudyCountDown
+ADDED from AndroidManifest.xml:99:9
+	android:theme
+		ADDED from AndroidManifest.xml:101:13
+	android:name
+		ADDED from AndroidManifest.xml:100:13
+activity#com.zhuandian.qxe.ExtralModule.heartshare.HeartShare
+ADDED from AndroidManifest.xml:102:9
+	android:theme
+		ADDED from AndroidManifest.xml:104:13
+	android:name
+		ADDED from AndroidManifest.xml:103:13
+activity#com.zhuandian.qxe.ExtralModule.secretNote.Secret_note
+ADDED from AndroidManifest.xml:105:9
+	android:theme
+		ADDED from AndroidManifest.xml:107:13
+	android:name
+		ADDED from AndroidManifest.xml:106:13
+activity#com.zhuandian.qxe.MainFrame.MyGame
+ADDED from AndroidManifest.xml:109:9
+	android:name
+		ADDED from AndroidManifest.xml:109:19
+activity#com.zhuandian.qxe.MainFrame.WriteTable
+ADDED from AndroidManifest.xml:110:9
+	android:name
+		ADDED from AndroidManifest.xml:110:19
+activity#com.zhuandian.qxe.MainFrame.LostAndFound
+ADDED from AndroidManifest.xml:111:9
+	android:theme
+		ADDED from AndroidManifest.xml:112:13
+	android:name
+		ADDED from AndroidManifest.xml:111:19
+activity#com.zhuandian.qxe.GuideView.GuideView
+ADDED from AndroidManifest.xml:114:9
+	android:name
+		ADDED from AndroidManifest.xml:114:19
+service#cn.bmob.push.lib.service.PushService
+ADDED from AndroidManifest.xml:116:9
+	android:process
+		ADDED from AndroidManifest.xml:120:13
+	android:label
+		ADDED from AndroidManifest.xml:119:13
+	android:exported
+		ADDED from AndroidManifest.xml:118:13
+	android:name
+		ADDED from AndroidManifest.xml:117:13
+intent-filter#cn.bmob.push.lib.service.PushService
+ADDED from AndroidManifest.xml:121:13
+action#cn.bmob.push.lib.service.PushService
+ADDED from AndroidManifest.xml:122:17
+	android:name
+		ADDED from AndroidManifest.xml:122:25
+service#cn.bmob.push.lib.service.PushNotifyService
+ADDED from AndroidManifest.xml:127:9
+	android:process
+		ADDED from AndroidManifest.xml:129:13
+	android:name
+		ADDED from AndroidManifest.xml:128:13
+receiver#cn.bmob.push.PushReceiver
+ADDED from AndroidManifest.xml:132:9
+	android:name
+		ADDED from AndroidManifest.xml:132:19
+intent-filter#android.intent.action.BOOT_COMPLETED+android.intent.action.USER_PRESENT+android.net.conn.CONNECTIVITY_CHANGE
+ADDED from AndroidManifest.xml:133:13
+action#android.intent.action.BOOT_COMPLETED
+ADDED from AndroidManifest.xml:136:17
+	android:name
+		ADDED from AndroidManifest.xml:136:25
+action#android.intent.action.USER_PRESENT
+ADDED from AndroidManifest.xml:138:17
+	android:name
+		ADDED from AndroidManifest.xml:138:25
+action#android.net.conn.CONNECTIVITY_CHANGE
+ADDED from AndroidManifest.xml:140:17
+	android:name
+		ADDED from AndroidManifest.xml:140:25
+receiver#com.zhuandian.qxe.service.MyPushMessageReceiver
+ADDED from AndroidManifest.xml:145:9
+	android:name
+		ADDED from AndroidManifest.xml:145:19
+intent-filter#cn.bmob.push.action.MESSAGE
+ADDED from AndroidManifest.xml:146:13
+action#cn.bmob.push.action.MESSAGE
+ADDED from AndroidManifest.xml:147:17
+	android:name
+		ADDED from AndroidManifest.xml:147:25
+receiver#cn.bmob.push.PushNotifyReceiver
+ADDED from AndroidManifest.xml:152:9
+	android:process
+		ADDED from AndroidManifest.xml:154:13
+	android:name
+		ADDED from AndroidManifest.xml:153:13
+intent-filter#cn.bmob.push.action.HEARTBEAT+cn.bmob.push.action.NOTIFY
+ADDED from AndroidManifest.xml:155:13
+action#cn.bmob.push.action.HEARTBEAT
+ADDED from AndroidManifest.xml:158:17
+	android:name
+		ADDED from AndroidManifest.xml:158:25
+action#cn.bmob.push.action.NOTIFY
+ADDED from AndroidManifest.xml:160:17
+	android:name
+		ADDED from AndroidManifest.xml:160:25
+uses-sdk
+INJECTED from AndroidManifest.xml:0:0 reason: use-sdk injection requested
+MERGED from com.android.support:appcompat-v7:22.2.1:20:5
+MERGED from com.android.support:support-v4:22.2.1:20:5
+MERGED from com.specyci:residemenu:1.6:7:5
+MERGED from cn.pedant.sweetalert:library:1.3:7:5
+MERGED from com.pnikosis:materialish-progress:1.0:7:5
+MERGED from com.android.support:appcompat-v7:22.2.1:20:5
+MERGED from com.android.support:support-v4:22.2.1:20:5
+MERGED from com.github.erd:android-volley:1.0.0:3:5
+MERGED from com.github.d-max:spots-dialog:0.7:8:5
+MERGED from com.robinhood.ticker:ticker:1.1.0:6:5
+MERGED from com.android.support:cardview-v7:22.2.1:20:5
+MERGED from com.android.support:recyclerview-v7:22.2.1:20:5
+MERGED from com.android.support:support-v4:22.2.1:20:5
+MERGED from com.jiechic.library:xUtils:2.6.14:7:5
+MERGED from com.android.support:design:22.2.1:20:5
+MERGED from com.android.support:appcompat-v7:22.2.1:20:5
+MERGED from com.android.support:support-v4:22.2.1:20:5
+MERGED from com.android.support:support-v4:22.2.1:20:5
+MERGED from com.android.support:support-v4:22.2.1:20:5
+MERGED from com.github.chenupt.android:springindicator:1.0.2:7:5
+	android:targetSdkVersion
+		INJECTED from AndroidManifest.xml:0:0
+		INJECTED from AndroidManifest.xml:0:0
+	android:minSdkVersion
+		INJECTED from AndroidManifest.xml:0:0
+		INJECTED from AndroidManifest.xml:0:0

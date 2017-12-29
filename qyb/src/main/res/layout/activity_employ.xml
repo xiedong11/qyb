@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+    <include layout="@layout/toolbar"/>
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="#ffffff"
+        android:gravity="center"
+        >
+        <TextView
+            android:textSize="16sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="求职方向"
+            android:layout_marginLeft="5dp"
+            android:padding="12dp"
+            android:textColor="#313131"
+            />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:hint="兴趣爱好"
+            android:textSize="14sp"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="2dp"
+            android:background="@null"
+            android:layout_marginRight="5dp"
+            />
+
+
+    </LinearLayout>
+    <include layout="@layout/divider_line"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="#ffffff"
+        android:gravity="center"
+        >
+        <TextView
+            android:textSize="16sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="期望薪资待遇"
+            android:layout_marginLeft="5dp"
+            android:padding="12dp"
+            android:textColor="#313131"
+            />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:hint="编辑薪水范围"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="2dp"
+            android:textSize="14sp"
+            android:background="@null"
+            android:layout_marginRight="5dp"
+            />
+
+
+    </LinearLayout>
+    <include layout="@layout/divider_line"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="#ffffff"
+        android:gravity="center"
+        >
+        <TextView
+            android:textSize="16sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="工作地点"
+            android:layout_marginLeft="5dp"
+            android:padding="12dp"
+            android:textColor="#313131"
+            />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:hint="编辑地点"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="2dp"
+            android:textSize="14sp"
+            android:background="@null"
+            android:layout_marginRight="5dp"
+            />
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="#ffffff"
+        android:gravity="center"
+        >
+        <TextView
+            android:textSize="16sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="工作性质"
+            android:layout_marginLeft="5dp"
+            android:padding="12dp"
+            android:textColor="#313131"
+            />
+        <EditText
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="2dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:hint="全职or实习"
+            android:textSize="14sp"
+            android:background="@null"
+            android:layout_marginRight="5dp"
+            />
+
+
+    </LinearLayout>
+    <include layout="@layout/divider_line"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:orientation="vertical"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:textSize="16sp"
+            android:text="项目经验"
+            android:padding="12dp"
+            android:textColor="#313131"
+            />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edittext_background"
+            android:lines="5"
+            android:layout_gravity="left"
+            android:gravity="left"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:padding="5dp"
+            android:textSize="13sp"
+            android:hint="描述下您的项目或者工作经验方便我们为您推送相关工作"
+
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/commit"
+        android:layout_marginTop="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="#ffffff"
+        android:gravity="center"
+        >
+        <TextView
+            android:textSize="16sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="提交申请"
+            android:gravity="center"
+            android:layout_marginLeft="5dp"
+            android:textColor="#ff0000"
+            />
+
+
+
+    </LinearLayout>
+
+</LinearLayout>

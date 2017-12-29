@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+    <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="20dp"
+        card_view:cardBackgroundColor="#ffffff"
+        card_view:cardCornerRadius="20dp"
+        card_view:cardPreventCornerOverlap="true"
+        card_view:cardUseCompatPadding="true"
+        card_view:contentPadding="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+        <LinearLayout
+            android:id="@+id/community_activity"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_student_data_academy_icon"
+                android:gravity="center"
+                android:text="校园活动"
+                android:textColor="#212121" />
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="更多 "
+                android:textColor="#212121"
+                android:layout_marginRight="5dp"
+                android:gravity="right"
+                android:drawableRight="@drawable/left1"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            >
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_marginBottom="5dp"
+    >
+            <ImageView
+                android:layout_width="120dp"
+                android:layout_height="180dp"
+                android:paddingLeft="2dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/home_2"
+                />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="新生入学，入团奖励！"
+                    android:textColor="#000000"
+                    android:padding="10dp"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="279人感兴趣"
+                    android:paddingLeft="15dp"
+                    android:textColor="#ffff50a8"
+                    android:textSize="12sp"
+                    />
+
+                <TextView
+                    android:layout_marginTop="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="   时间:   2016-10-25"
+                    android:drawableLeft="@drawable/time_2"
+                    android:gravity="center"
+                    android:paddingLeft="17dp"
+                    android:textColor="#838383"
+                    android:textSize="12sp"
+                    />
+                <TextView
+                    android:layout_marginTop="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="  主办单位:   曲园帮"
+                    android:drawableLeft="@drawable/people"
+                    android:gravity="center"
+                    android:paddingLeft="15dp"
+                    android:textColor="#838383"
+                    android:textSize="12sp"
+                    />
+                <TextView
+                    android:layout_marginTop="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="  地点:  线上举办"
+                    android:drawableLeft="@drawable/local"
+                    android:paddingLeft="17dp"
+                    android:gravity="center"
+                    android:textColor="#838383"
+                    android:textSize="12sp"
+                    />
+
+                </LinearLayout>
+</LinearLayout>
+            </LinearLayout>
+        <include layout="@layout/divider_line"/>
+        <LinearLayout
+            android:id="@+id/heart_share"
+            android:layout_width="fill_parent"
+            android:layout_height="45dp"
+            android:gravity="center"
+            android:background="#ffffff"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="心语互享"
+                android:paddingLeft="5dp"
+                android:textColor="#212121" />
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="更多 "
+                android:textColor="#212121"
+                android:layout_marginRight="5dp"
+                android:gravity="right"
+                android:drawableRight="@drawable/left1"
+                />
+        </LinearLayout>
+        <include layout="@layout/divider_line"/>
+        <LinearLayout
+            android:id="@+id/work"
+            android:layout_width="fill_parent"
+            android:layout_height="45dp"
+            android:gravity="center"
+            android:background="#ffffff"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="学习监督"
+                android:paddingLeft="5dp"
+                android:textColor="#212121" />
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="更多 "
+                android:textColor="#212121"
+                android:layout_marginRight="5dp"
+                android:gravity="right"
+                android:drawableRight="@drawable/left1"
+                />
+        </LinearLayout>
+    </LinearLayout>
+</android.support.v7.widget.CardView>
+</LinearLayout>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:background="#ffffff"
+    >
+    <ImageView
+        android:id="@+id/image"
+        android:layout_marginTop="80dp"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:src="@drawable/ic_launcher"
+        android:layout_above="@+id/title"
+        android:layout_centerHorizontal="true"
+        />
+    <TextView
+        android:layout_below="@+id/image"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:paddingTop="20dp"
+        />
+    <TextView
+        android:layout_below="@+id/title"
+        android:id="@+id/description"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:text="相聚曲园实属不易，曲园是一个大平台，只要你有想法任何事情都可以实现！曲园帮项目给师大学子提供一个很好的二手市场平台，二手物品处理，失物招领，相约跑步，更多功能持续完善功能尽在曲园帮\n\n\n技术支持群：455264771"
+        android:paddingTop="10dp"
+        />
+
+        <TextView
+            android:layout_marginBottom="10dp"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:layout_width="fill_parent"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:text="曲园帮团队出品"
+            android:paddingTop="10dp"
+            />
+
+</RelativeLayout>

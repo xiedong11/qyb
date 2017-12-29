@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    android:orientation="vertical">
+    <include layout="@layout/query_toolbar"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/setting_bg_color"
+        android:orientation="vertical">
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:layout_marginTop="20dp"
+            android:background="#ffffff"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/lost_and_found_broadcast_info"
+                android:textColor="#919191"
+                android:textSize="15sp"
+                android:layout_margin="15dp"
+                />
+            <!--<include layout="@layout/divider_line"/>-->
+            <EditText
+                android:id="@+id/broadcast_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/edittext_background"
+                android:gravity="left"
+                android:hint="@string/lost_and_found_broadcast_hint"
+                android:lines="12"
+                android:padding="5dp"
+                android:paddingTop="5dp"
+                android:textColor="#515151"
+                android:textSize="13sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_margin="10dp"
+            android:id="@+id/commit_content"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:background="#ffffff"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/submit_broadcast"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="发起广播"
+                android:textColor="#00f" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

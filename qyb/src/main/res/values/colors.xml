@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="appBar">#ffff337b</color>
+    <color name="main_background">#2223233b</color>
+    <color name="appBaseColor">#E91E63</color>
+    <color name="setting_bg_color">#2223233b</color>
+
+    <color name="translucence">#554e4752</color>
+    <color name="no_color">#00000000</color>
+    <color name="bg_color">#F4F3F3</color>
+    <color name="bg_color_deep">#E5E5E5</color>
+    <color name="text_color">#ffffffff</color>
+    <color name="cache_small">#00ee00</color>
+    <color name="cache_middle">#ffff00</color>
+    <color name="cache_large">#ee0000</color>
+    <color name="kb_item_bg0">#50505050</color>
+    <color name="kb_background">#ff505050</color>
+    <color name="TextColor">#FFFFFF</color>
+    <color name="bgColor">#000000</color>
+    <color name="ORANGE">#4169E1</color>
+    <color name="GREEN">#FF339933</color>
+    <color name="BLACK_HALF">#50000000</color>
+    <color name="BLUE">#FF1BA1E2</color>
+    <color name="RED">#FFE51400</color>
+    <color name="orange">#FFF09609</color>
+    <color name="LITEGREEN">#FF8CBF26</color>
+    <color name="LAKEBLUE">#FF00ABA9</color>
+    <color name="LITERED">#FFFF0097</color>
+    <color name="PINK">#FFE671B8</color>
+    <color name="BROWN">#FF996600</color>
+    <color name="PURPLE">#FFA200FF</color>
+    <color name="GRAY">#FFDEDFDE</color>
+    <color name="WHITE">#FFFFFFFF</color>
+    <color name="BLACK">#FF000000</color>
+    <color name="zbbj">#4169E1</color>
+
+    <!-- 水波纹效果 -->
+    <color name="rippelColor">#CCCCCC</color>
+
+</resources>

@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.zhuandian.qxe" >
+
+    <!-- 在SDCard中创建与删除文件权限 -->
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <!-- 往SDCard写入数据权限 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+    <!-- 引入Bmob相关权限 -->
+    <!-- 允许联网 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- 获取GSM（2g）、WCDMA（联通3g）等网络状态的信息 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- 获取wifi网络状态的信息 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <!-- 保持CPU 运转，屏幕和键盘灯有可能是关闭的,用于文件上传和下载 -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <!-- 获取sd卡写的权限，用于文件上传和下载 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!-- 允许读取手机状态 用于创建BmobInstallation -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <!-- 在线更新引进的权限 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <!-- 后台统计相应权限声明 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <!-- 推送所需的权限 -->
+    <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <!-- 调用系统震动器 -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <!-- 拨打电话的权限 -->
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
+
+    <!--友盟相关-->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+
+
+    <application
+        android:name=".service.QYBApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+
+        <!--友盟统计相关-->
+        <meta-data
+            android:value="58ecae4c04e20585720007e6"
+            android:name="UMENG_APPKEY"/>
+        <meta-data
+            android:value="qyb"
+            android:name="UMENG_CHANNEL"/>
+
+        <!-- 在线更新的activity -->
+        <activity
+            android:name="cn.bmob.v3.update.UpdateDialogActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+        </activity>
+        <activity
+            android:name=".MenuActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity android:name=".GuideView.StartFirst" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainFrame.esGoods.ItemActivity"
+            android:theme="@style/ItemActivity" />
+        <activity
+            android:name=".MainFrame.schoolNews.NewsItemActivity"
+            android:theme="@style/ItemActivity" />
+        <activity android:name=".service.LoginActivity" >
+        </activity>
+        <activity
+            android:name=".ExtralModule.wkzxs.ZHLActivity"
+            android:theme="@style/ZXSActivity" />
+        <activity
+            android:name=".ExtralModule.wkzxs.XLActivity"
+            android:theme="@style/ZXSActivity" />
+        <activity
+            android:name=".ExtralModule.wkzxs.WSLActivity"
+            android:theme="@style/ZXSActivity" />
+        <activity
+            android:name=".ExtralModule.gradeQuery.QueryGradeActivity"
+            android:theme="@style/queryGrade" />
+        <activity
+            android:name=".ExtralModule.CommunityActivity"
+            android:theme="@style/extral_school" />
+        <activity
+            android:name=".ExtralModule.EmployActivity"
+            android:theme="@style/extral_school" />
+        <activity
+            android:name=".ExtralModule.TestCalendar"
+            android:theme="@style/extral_school" />
+        <activity
+            android:name=".ExtralModule.Postgraduate_Plan"
+            android:theme="@style/extral_school" />
+        <activity
+            android:name=".ExtralModule.StudyCountDown"
+            android:theme="@style/extral_school" />
+        <activity
+            android:name=".ExtralModule.heartshare.HeartShareActivity"
+            android:theme="@style/extral_school" />
+        <activity
+            android:name=".ExtralModule.secretNote.Secret_note"
+            android:theme="@style/extral_school"
+            />
+        <activity android:name=".MainFrame.MyGame"/>
+        <activity android:name=".MainFrame.WriteTable"/>
+        <activity android:name=".MainFrame.LostAndFound"
+            android:theme="@style/queryGrade"
+            />
+        <activity android:name=".GuideView.GuideView"/>
+
+        <service
+            android:name="cn.bmob.push.lib.service.PushService"
+            android:exported="true"
+            android:label="PushService"
+            android:process=":bmobpush" >
+            <intent-filter>
+                <action android:name="cn.bmob.push.lib.service.PushService" />
+            </intent-filter>
+        </service>
+
+        <!-- 用于进程保活 -->
+        <service
+            android:name="cn.bmob.push.lib.service.PushNotifyService"
+            android:process=":bmobpush" >
+        </service>
+
+        <receiver android:name="cn.bmob.push.PushReceiver" >
+            <intent-filter>
+
+                <!-- 系统启动完成后会调用 -->
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <!-- 解锁完成后会调用 -->
+                <action android:name="android.intent.action.USER_PRESENT" />
+                <!-- 监听网络连通性 -->
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+        </receiver>
+
+        <!-- 第四部中创建的消息接收器，在这里进行注册 -->
+        <receiver android:name=".service.MyPushMessageReceiver" >
+            <intent-filter>
+                <action android:name="cn.bmob.push.action.MESSAGE" />
+            </intent-filter>
+        </receiver>
+
+        <!-- 接收心跳和唤醒的广播，要和PushService运行在同个进程 -->
+        <receiver
+            android:name="cn.bmob.push.PushNotifyReceiver"
+            android:process=":bmobpush" >
+            <intent-filter>
+
+                <!-- 接收心跳广播的action -->
+                <action android:name="cn.bmob.push.action.HEARTBEAT" />
+                <!-- 接收唤醒广播的action -->
+                <action android:name="cn.bmob.push.action.NOTIFY" />
+            </intent-filter>
+        </receiver>
+
+    </application>
+
+</manifest>

@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/toolbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1.0"
+
+
+        android:background="#ffffff"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="60dip"
+                android:layout_marginLeft="5dip"
+                android:layout_marginRight="5dip"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="起床 "
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/morning_time"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:background="@null"
+                    android:textColor="@color/BLACK_HALF"
+                    android:layout_width="60dp"
+                    android:layout_height="match_parent"
+                    android:text="7:00"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/kcb_item1"
+                android:layout_width="fill_parent"
+                android:layout_height="70dip"
+                android:layout_marginLeft="5dip"
+                android:layout_marginRight="5dip"
+                android:background="@drawable/shape1">
+
+                <TextView
+                    android:id="@+id/rikcb_1jie"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_marginLeft="5dip"
+                    android:gravity="center"
+                    android:text="1~2节"
+                    android:textColor="@color/GREEN"
+                    android:textSize="15sp" />
+
+                <EditText
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:background="@null"
+                    android:id="@+id/class_12"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="5dip"
+                    android:layout_marginRight="5dip"
+                    android:layout_marginTop="10dip"
+                    android:layout_toRightOf="@+id/rikcb_1jie"
+                    android:singleLine="true"
+                    android:tag="rikcb_km"
+                    android:text="高数"
+                    android:textColor="@color/BLACK_HALF"
+                    android:textSize="22sp" />
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="20dip"
+                android:layout_marginLeft="5dip"
+                android:layout_marginRight="5dip"
+
+                ></RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/kcb_item2"
+                android:layout_width="fill_parent"
+                android:layout_height="70dip"
+                android:layout_marginLeft="5dip"
+                android:layout_marginRight="5dip"
+                android:background="@drawable/shape1">
+
+                <TextView
+                    android:id="@+id/rikcb_2jie"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_marginLeft="5dip"
+                    android:gravity="center"
+                    android:text="3~4节"
+                    android:textColor="@color/GREEN"
+                    android:textSize="15sp" />
+
+                <EditText
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:background="@null"
+                    android:id="@+id/class_34"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="5dip"
+                    android:layout_marginRight="5dip"
+                    android:layout_marginTop="10dip"
+                    android:layout_toRightOf="@+id/rikcb_2jie"
+                    android:singleLine="true"
+                    android:tag="rikcb_km"
+                    android:text="英语"
+                    android:textColor="@color/BLACK_HALF"
+                    android:textSize="22sp" />
+
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="50dip"
+                android:layout_marginLeft="5dip"
+                android:layout_marginRight="5dip"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="午休 "
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/afternoon_time"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:background="@null"
+                    android:layout_width="60dp"
+                    android:layout_height="match_parent"
+                    android:text="13:00"
+                    android:textColor="@color/BLACK_HALF"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/kcb_item3"
+                android:layout_width="fill_parent"
+                android:layout_height="80dip"
+                android:layout_marginLeft="5dip"
+                android:layout_marginRight="5dip"
+                android:background="@drawable/shape1">
+
+                <TextView
+                    android:id="@+id/rikcb_3jie"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_marginLeft="5dip"
+                    android:gravity="center"
+                    android:text="5~7节"
+                    android:textColor="@color/GREEN"
+                    android:textSize="15sp" />
+
+                <EditText
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:background="@null"
+                    android:text="政治"
+                    android:id="@+id/class_57"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="5dip"
+                    android:layout_marginRight="5dip"
+                    android:layout_marginTop="10dip"
+                    android:layout_toRightOf="@+id/rikcb_3jie"
+                    android:singleLine="true"
+                    android:tag="rikcb_km"
+                    android:textColor="@color/BLACK_HALF"
+                    android:textSize="22sp" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="18dip"
+                android:layout_marginLeft="5dip"
+                android:layout_marginRight="5dip" />
+
+            <RelativeLayout
+                android:id="@+id/kcb_item4"
+                android:layout_width="fill_parent"
+                android:layout_height="80dip"
+                android:layout_marginLeft="5dip"
+                android:layout_marginRight="5dip"
+                android:background="@drawable/shape1">
+
+                <TextView
+                    android:id="@+id/rikcb_4jie"
+                    android:layout_width="wrap_content"
+                    android:layout_height="90dip"
+                    android:layout_marginLeft="5dip"
+                    android:gravity="center"
+                    android:text="9~11节"
+                    android:textColor="@color/GREEN"
+                    android:textSize="15sp" />
+
+                <EditText
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:background="@null"
+                    android:id="@+id/class_911"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="5dip"
+                    android:layout_marginRight="5dip"
+                    android:layout_marginTop="10dip"
+                    android:layout_toRightOf="@+id/rikcb_4jie"
+                    android:singleLine="true"
+                    android:tag="rikcb_km"
+                    android:text="专业课"
+                    android:textColor="@color/BLACK_HALF"
+                    android:textSize="22sp" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="20dip"
+                android:layout_marginLeft="5dip"
+                android:layout_marginRight="5dip"
+
+                ></RelativeLayout>
+
+            <EditText
+                android:id="@+id/jishibenTV"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:gravity="top"
+                android:hint="座右铭激励自己吧！(长按编辑,返回键保存)"
+                android:minHeight="100dip"
+                android:padding="10dip"
+                android:textColor="@color/BLACK_HALF"
+                />
+        </LinearLayout>
+    </ScrollView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="5dip"
+        android:layout_weight="1.1"
+        android:background="@null" />
+</LinearLayout>

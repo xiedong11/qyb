@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/swipe_refresh"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ListView
+                android:id="@+id/listView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="2dp" />
+
+        </android.support.v4.widget.SwipeRefreshLayout>
+
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/search"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_gravity="bottom|right"
+        android:layout_margin="10dp"
+        android:src="@drawable/qy_taobao"
+        app:backgroundTint="#631263"
+
+        />
+
+    <include layout="@layout/load_animation" />
+</FrameLayout>

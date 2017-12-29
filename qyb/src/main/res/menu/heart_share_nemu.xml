@@ -1,0 +1,19 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+    <item
+        android:id="@+id/my_share"
+        android:orderInCategory="100"
+        android:title="我的动态"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/my_comment"
+        android:orderInCategory="100"
+        android:title="我的评论"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/my_likes"
+        android:orderInCategory="100"
+        android:title="我赞过的"
+        app:showAsAction="never" />
+</menu>

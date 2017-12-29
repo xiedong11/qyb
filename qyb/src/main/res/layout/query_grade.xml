@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#2223233b"
+    android:orientation="vertical">
+    <include layout="@layout/query_toolbar"/>
+
+    <FrameLayout
+        android:id="@+id/query_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+
+        <LinearLayout
+            android:id="@+id/cet_4_6"
+            android:layout_width="fill_parent"
+            android:layout_height="45dp"
+            android:layout_marginTop="15dp"
+            android:background="#ffffff"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingLeft="10dp"
+                android:text="英语四六级"
+                android:textColor="#212121" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:drawableRight="@drawable/left1"
+                android:gravity="right"
+                android:text="更多 "
+                android:textColor="#212121" />
+        </LinearLayout>
+
+        <include layout="@layout/divider_line" />
+
+        <LinearLayout
+            android:id="@+id/computer_grade"
+            android:layout_width="fill_parent"
+            android:layout_height="45dp"
+            android:background="#ffffff"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingLeft="10dp"
+                android:text="计算机等级"
+                android:textColor="#212121" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:drawableRight="@drawable/left1"
+                android:gravity="right"
+                android:text="更多 "
+                android:textColor="#212121" />
+        </LinearLayout>
+
+        <include layout="@layout/divider_line" />
+
+        <LinearLayout
+            android:id="@+id/putonghua_grade"
+            android:layout_width="fill_parent"
+            android:layout_height="45dp"
+            android:background="#ffffff"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingLeft="10dp"
+                android:text="普通话查询"
+                android:textColor="#212121" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:drawableRight="@drawable/left1"
+                android:gravity="right"
+                android:text="更多 "
+                android:textColor="#212121" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/spoken_grade"
+            android:layout_width="fill_parent"
+            android:layout_height="45dp"
+            android:layout_marginTop="15dp"
+            android:background="#ffffff"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingLeft="10dp"
+                android:text="英语口语"
+                android:textColor="#212121" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:drawableRight="@drawable/left1"
+                android:gravity="right"
+                android:text="更多 "
+                android:textColor="#212121" />
+        </LinearLayout>
+
+        <include layout="@layout/divider_line" />
+
+        <LinearLayout
+            android:id="@+id/interrupt_grade"
+            android:layout_width="fill_parent"
+            android:layout_height="45dp"
+            android:background="#ffffff"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingLeft="10dp"
+                android:text="全国外语翻译证书"
+                android:textColor="#212121" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:drawableRight="@drawable/left1"
+                android:gravity="right"
+                android:text="更多 "
+                android:textColor="#212121" />
+        </LinearLayout>
+
+        </LinearLayout>
+
+    </FrameLayout>
+</LinearLayout>

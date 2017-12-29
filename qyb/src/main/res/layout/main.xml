@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:background="@android:color/white"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="#E91E63"
+            android:id="@+id/layout_top">
+
+        <!--<ImageView-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="3dp"-->
+                <!--android:background="#2ea3fe"/>-->
+
+        <FrameLayout
+                android:layout_width="fill_parent"
+                android:layout_height="50dp">
+
+            <Button
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/md_nav_icon"
+                    android:id="@+id/title_bar_left_menu"
+                    android:layout_gravity="left|center_vertical"
+                    android:layout_marginLeft="10dp"/>
+
+            <TextView
+                    android:id="@+id/navigation_text"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="7dp"
+                    android:text="@string/app_name"
+                    android:textSize="19sp"
+                   android:gravity="center"
+                    android:textColor="#ffffff"
+                    android:layout_gravity="center"/>
+
+            <Button
+                    android:layout_width="32dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/app_share_btn"
+                    android:id="@+id/title_bar_right_menu"
+                    android:layout_gravity="right|center_vertical"
+                    android:layout_marginRight="10dp"/>
+        </FrameLayout>
+
+        <!--<ImageView-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="5dp"-->
+                <!--android:background="#ebebeb"/>-->
+
+    </LinearLayout>
+
+    <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:id="@+id/main_fragment">
+    </FrameLayout>
+
+</LinearLayout>

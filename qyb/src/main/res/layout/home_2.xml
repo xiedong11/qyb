@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+    <!--<FrameLayout-->
+
+    <!--android:padding="20dp"-->
+    <!--android:layout_alignParentBottom="true"-->
+    <!--android:layout_width="fill_parent"-->
+    <!--android:layout_height="wrap_content">-->
+
+    <!--</FrameLayout>-->
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/heard_layout"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:background="@color/appBaseColor"
+                android:gravity="bottom"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:drawableLeft="@drawable/info"
+                    android:gravity="center"
+                    android:padding="20dp"
+                    android:text="@string/voice"
+                    android:textColor="#ffffff"
+                    android:textStyle="bold|italic" />
+
+                <com.zhuandian.qxe.utils.MyView.AlwaysMarqueeTextView
+                    android:id="@+id/qy_broadcast_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="20dp"
+                    android:ellipsize="marquee"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:gravity="center"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:padding="20dp"
+                    android:singleLine="true"
+                    android:text="@string/voicecontent"
+                    android:textColor="#ffffff"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+
+            <!--设置Iamge是可以使用android:scaleType设置图片的显示样式-->
+            <com.robinhood.ticker.TickerView
+                android:id="@+id/tickerView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+
+            <!--<android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:elevation="20dp"-->
+            <!--card_view:cardBackgroundColor="#ffff50a8"-->
+            <!--card_view:cardCornerRadius="20dp"-->
+            <!--card_view:cardPreventCornerOverlap="true"-->
+            <!--card_view:cardUseCompatPadding="true"-->
+            <!--card_view:contentPadding="10dp">-->
+
+            <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="无课自习室" />-->
+            <!--</android.support.v7.widget.CardView>-->
+
+            <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:elevation="20dp"
+                card_view:cardBackgroundColor="#ffffff"
+                card_view:cardCornerRadius="20dp"
+                card_view:cardPreventCornerOverlap="true"
+                card_view:cardUseCompatPadding="true"
+                card_view:contentPadding="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="10dp"
+                        android:orientation="horizontal">
+
+                        <View
+                            android:layout_width="70dp"
+                            android:layout_height="1dp"
+                            android:layout_gravity="center"
+                            android:background="#b6b6b6" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
+                            android:text="无课自习室选择"
+                            android:textColor="#212121" />
+
+                        <View
+                            android:layout_width="70dp"
+                            android:layout_height="1dp"
+                            android:layout_gravity="center"
+                            android:background="#b6b6b6" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+                        >
+
+                        <LinearLayout
+                            android:id="@+id/wsl"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="45dp"
+                                android:layout_height="45dp"
+                                android:layout_gravity="center"
+                                android:scaleType="center"
+                                android:src="@drawable/xl" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="文史楼" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/zhl"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="45dp"
+                                android:layout_height="45dp"
+                                android:layout_gravity="center"
+                                android:scaleType="center"
+                                android:src="@drawable/zhl_logo" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="综合楼" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/xl"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="45dp"
+                                android:layout_height="45dp"
+                                android:layout_gravity="center"
+                                android:scaleType="center"
+                                android:src="@drawable/wsl" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="西联" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <!--<android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_gravity="center"-->
+            <!--android:elevation="20dp"-->
+            <!--card_view:cardBackgroundColor="#ff9cbdff"-->
+            <!--card_view:cardCornerRadius="20dp"-->
+            <!--card_view:cardPreventCornerOverlap="true"-->
+            <!--card_view:cardUseCompatPadding="true"-->
+            <!--card_view:contentPadding="10dp">-->
+
+            <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="曲园特色菜"-->
+            <!--android:textColor="#ffff337b"-->
+
+            <!--/>-->
+            <!--</android.support.v7.widget.CardView>-->
+            <include layout="@layout/home_4" />
+
+            <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:elevation="20dp"
+                card_view:cardBackgroundColor="#ffffff"
+                card_view:cardCornerRadius="20dp"
+
+                card_view:cardPreventCornerOverlap="true"
+                card_view:cardUseCompatPadding="true"
+                card_view:contentPadding="10dp">
+
+                <include layout="@layout/home_3" />
+            </android.support.v7.widget.CardView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:background="#ffffff"></LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/bang"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginRight="5dp"
+        android:src="@drawable/lost_and_found_icon"
+        app:backgroundTint="#E91E63"
+        app:layout_anchor="@id/heard_layout"
+        app:layout_anchorGravity="bottom|right"
+        app:layout_scrollFlags="scroll|enterAlwaysCollapsed"
+
+        />
+    <!--</LinearLayout>-->
+
+</android.support.design.widget.CoordinatorLayout>

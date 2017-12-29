@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+<include layout="@layout/toolbar"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+        >
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+    <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:layout_width="wrap_content"
+        android:layout_height="320dp"
+        android:elevation="20dp"
+        card_view:cardBackgroundColor="#ffffff"
+        card_view:cardCornerRadius="20dp"
+
+        card_view:cardPreventCornerOverlap="true"
+        card_view:cardUseCompatPadding="true"
+        card_view:contentPadding="10dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/test_1"
+            android:scaleType="fitXY"
+            />
+    </android.support.v7.widget.CardView>
+    <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="20dp"
+        card_view:cardBackgroundColor="#ffffff"
+        card_view:cardCornerRadius="20dp"
+
+        card_view:cardPreventCornerOverlap="true"
+        card_view:cardUseCompatPadding="true"
+        card_view:contentPadding="10dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="320dp"
+            android:src="@drawable/test_4"
+            android:scaleType="fitXY"
+            />
+    </android.support.v7.widget.CardView>
+    <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="20dp"
+        card_view:cardBackgroundColor="#ffffff"
+        card_view:cardCornerRadius="20dp"
+
+        card_view:cardPreventCornerOverlap="true"
+        card_view:cardUseCompatPadding="true"
+        card_view:contentPadding="10dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="320dp"
+            android:src="@drawable/test_5"
+            android:scaleType="fitXY"
+            />
+    </android.support.v7.widget.CardView>
+    <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="20dp"
+        card_view:cardBackgroundColor="#ffffff"
+        card_view:cardCornerRadius="20dp"
+
+        card_view:cardPreventCornerOverlap="true"
+        card_view:cardUseCompatPadding="true"
+        card_view:contentPadding="10dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="320dp"
+            android:src="@drawable/test_6"
+            android:scaleType="fitXY"
+            />
+    </android.support.v7.widget.CardView>
+    <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:layout_width="wrap_content"
+        android:layout_height="320dp"
+        android:elevation="20dp"
+        card_view:cardBackgroundColor="#ffffff"
+        card_view:cardCornerRadius="20dp"
+
+        card_view:cardPreventCornerOverlap="true"
+        card_view:cardUseCompatPadding="true"
+        card_view:contentPadding="10dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="320dp"
+            android:src="@drawable/test_8"
+            android:scaleType="fitXY"
+            />
+    </android.support.v7.widget.CardView>
+    <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="20dp"
+        card_view:cardBackgroundColor="#ffffff"
+        card_view:cardCornerRadius="20dp"
+
+        card_view:cardPreventCornerOverlap="true"
+        card_view:cardUseCompatPadding="true"
+        card_view:contentPadding="10dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="320dp"
+            android:src="@drawable/test_10"
+            android:scaleType="fitXY"
+            />
+    </android.support.v7.widget.CardView>
+    <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:layout_width="wrap_content"
+        android:layout_height="320dp"
+        android:elevation="20dp"
+        card_view:cardBackgroundColor="#ffffff"
+        card_view:cardCornerRadius="20dp"
+
+        card_view:cardPreventCornerOverlap="true"
+        card_view:cardUseCompatPadding="true"
+        card_view:contentPadding="10dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="320dp"
+            android:src="@drawable/test_11"
+            android:scaleType="fitXY"
+            />
+    </android.support.v7.widget.CardView>
+    <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="20dp"
+        card_view:cardBackgroundColor="#ffffff"
+        card_view:cardCornerRadius="20dp"
+
+        card_view:cardPreventCornerOverlap="true"
+        card_view:cardUseCompatPadding="true"
+        card_view:contentPadding="10dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="320dp"
+            android:src="@drawable/test_12"
+            android:scaleType="fitXY"
+            />
+    </android.support.v7.widget.CardView>
+</LinearLayout>
+    </ScrollView>
+</LinearLayout>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#640c8e62"
+    >
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_centerInParent="true"
+        android:src="@drawable/ic_launcher" />
+
+    <TextView
+        android:id="@+id/textView3"
+        style="@style/textSytle"
+        android:textStyle="normal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_below="@+id/image"
+        android:padding="10dp"
+        android:text="闲置二手，让曲园充满爱" />
+    <TextView
+        android:id="@+id/version"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_above="@+id/teaminfo"
+        android:gravity="center_horizontal"
+        android:textSize="13sp"
+        android:textColor="#ffffff"
+        android:text="未知版本"/>
+
+    <TextView
+        android:id="@+id/teaminfo"
+        style="@style/textSytle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:textSize="10sp"
+        android:text="@string/teaminfo" />
+</RelativeLayout>

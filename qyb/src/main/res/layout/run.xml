@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/blackboard512"
+    >
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        >
+        <com.zhuandian.qxe.utils.MyView.AlwaysMarqueeTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:ellipsize="marquee"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:padding="35dp"
+            android:gravity="center"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:singleLine="true"
+            android:text="跑步人数以小时为时间单位自动持续更新，请点击操场去相约跑步~~~"
+            android:textStyle="bold|italic" />
+        <TextView
+            android:layout_toRightOf="@+id/xcc"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:id="@+id/xcchz"
+            android:padding="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:drawableRight="@drawable/boy"
+            android:layout_centerHorizontal="true"
+            android:text="铁汉子" />
+        <TextView
+            android:id="@+id/xcc"
+            style="@style/textSytle"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_gravity="center"
+            android:layout_centerInParent="true"
+            android:background="@drawable/shape_textview_green"
+            android:gravity="center"
+            android:text="西操场" />
+
+        <TextView
+            android:id="@+id/xccsum"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="人数"
+            android:layout_below="@+id/xcc"
+            android:layout_centerHorizontal="true"
+            android:layout_centerInParent="true"
+            />
+
+
+
+        <TextView
+            android:padding="5dp"
+            android:id="@+id/xccmmz"
+            android:drawableLeft="@drawable/girl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="萌妹子"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_toLeftOf="@+id/xcc"
+
+            />
+
+
+    </RelativeLayout>
+
+    <!--<ImageView-->
+        <!--android:scaleType="fitXY"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:src="@drawable/run_line"-->
+        <!--/>-->
+<LinearLayout
+    android:layout_weight="1"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="0dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+    <TextView
+        android:id="@+id/time_hour"
+        android:layout_width="wrap_content"
+        android:layout_height="120dp"
+        android:text="00"
+        android:textSize="80sp"
+        android:textColor="#ffffff"
+        />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="120dp"
+            android:textSize="80sp"
+            android:text=":"
+            android:textColor="#ffffff"
+            />
+        <TextView
+            android:id="@+id/time_second"
+            android:layout_width="wrap_content"
+            android:layout_height="120dp"
+            android:textSize="80sp"
+            android:text="00"
+            android:textColor="#ffffff"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:visibility="invisible"
+        android:id="@+id/ed_time_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+        <EditText
+            android:id="@+id/time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="请输入跑步时长（分）"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            />
+        <Button
+            android:id="@+id/start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#ffffff"
+            android:textSize="20sp"
+            android:text="开始"
+            android:layout_gravity="center"
+            android:background="@drawable/button"
+            android:layout_marginTop="20dp"
+            />
+        </LinearLayout>
+
+</LinearLayout>
+</LinearLayout>
+    <TextView
+        android:id="@+id/run"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:gravity="center|"
+        android:layout_gravity="bottom|center"
+        android:text="跑"
+        android:textSize="26sp"
+        android:textColor="#ffffff"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/shape_textview_green"
+        />
+</FrameLayout>

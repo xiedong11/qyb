@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:oneshot="false" >
+
+    <!--学习监督模块的动态gif图片列表。图片文件已删除（项目未应用）-->
+    <!--<item-->
+        <!--android:drawable="@drawable/study1"-->
+        <!--android:duration="150"/>-->
+    <!--<item-->
+        <!--android:drawable="@drawable/study1"-->
+        <!--android:duration="150"/>-->
+    <!--<item-->
+        <!--android:drawable="@drawable/study1"-->
+        <!--android:duration="150"/>-->
+    <!--<item-->
+        <!--android:drawable="@drawable/study1"-->
+        <!--android:duration="150"/>-->
+
+</animation-list>

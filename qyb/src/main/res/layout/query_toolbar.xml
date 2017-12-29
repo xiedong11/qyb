@@ -1,0 +1,19 @@
+<android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#3F51B5"
+    >
+
+    <!--自定义控件-->
+    <TextView
+        android:id="@+id/toolbar_title"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:text=""
+        android:textColor="#ffffff"
+        android:textSize="18sp"
+
+        />
+</android.support.v7.widget.Toolbar>  

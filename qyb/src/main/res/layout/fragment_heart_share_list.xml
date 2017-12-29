@@ -1,0 +1,53 @@
+<android.support.design.widget.CoordinatorLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/heart_list_swipeRefresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <com.andexert.library.RippleView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            app:rv_color="@color/rippelColor"
+            app:rv_rippleDuration="70"
+            >
+        <ListView
+            android:id="@+id/heart_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+        </com.andexert.library.RippleView>
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+
+
+    <LinearLayout
+        android:id="@+id/loading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:background="#fff"
+        >
+        <include layout="@layout/load_animation"/>
+    </LinearLayout>
+
+    <!--app:layout_behavior="com.zhuandian.qxe.utils.myUtils.MyBehavior"-->
+    <!--只要向上滚动FAB就会消失，向下滚动FAB就是显示，
+        这里要注意的是FAB可以与RecycleView形成这种效果，
+        但是暂时并不支持ListView
+        ,另外，设置FoatingActionButton与SnackBar联动需要把FloatingActionButton设置为
+        CoordinatorLayout的直系子控件，而且必须为最上层的帧布局，否则无效果
+        -->
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|right"
+        android:layout_margin="10dp"
+        android:src="@drawable/write" />
+</android.support.design.widget.CoordinatorLayout>
+
+

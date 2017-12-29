@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/QYB.iml" filepath="$PROJECT_DIR$/QYB.iml" />
+      <module fileurl="file://$PROJECT_DIR$/qyb/qyb.iml" filepath="$PROJECT_DIR$/qyb/qyb.iml" />
+    </modules>
+  </component>
+</project>
