@@ -4,6 +4,9 @@ android {
     compileSdkVersion 25
     buildToolsVersion '26.0.2'
 
+    dataBinding {
+        enabled = true
+    }
     defaultConfig {
         applicationId "com.zhuandian.qxe"
         minSdkVersion 15
