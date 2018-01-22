@@ -42,6 +42,7 @@ public class SecondHandGoodsFragment extends Fragment {
         mBinder = DataBindingUtil.inflate(inflater, R.layout.fragment_second_hand_goods, container, false);
         ButterKnife.bind(this, mBinder.getRoot());
         initData();
+        mBinder.swipeRefresh.setRefreshing(false);
         mBinder.rvGoodsList.setLayoutManager(new LinearLayoutManager(getActivity()));
         return mBinder.getRoot();
     }
