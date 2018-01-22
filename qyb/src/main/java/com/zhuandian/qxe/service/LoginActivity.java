@@ -15,7 +15,7 @@ import android.widget.TextView;
 
 import com.zhuandian.qxe.MenuActivity;
 import com.zhuandian.qxe.R;
-import com.zhuandian.qxe.bean.Myuser;
+import com.zhuandian.qxe.entity.UserEntity;
 
 import cn.bmob.v3.Bmob;
 import cn.bmob.v3.exception.BmobException;
@@ -31,7 +31,7 @@ public class LoginActivity extends Activity implements View.OnClickListener {
     private TextView register;
     private EditText userword,password;
     private Button login;
-    private  Myuser myuser;
+    private UserEntity userEntity;
     private AlertDialog dialog;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +44,7 @@ public class LoginActivity extends Activity implements View.OnClickListener {
         //初始化Bmob的SDK
         Bmob.initialize(this, "df25a6c6a79479d11a60f2e89c68b467");
 
-       myuser =new Myuser();
+       userEntity =new UserEntity();
 
         initView();
 
@@ -106,13 +106,13 @@ public class LoginActivity extends Activity implements View.OnClickListener {
          username = userword.getText().toString();
          screat   = password.getText().toString();
 
-        myuser.setUsername(username);
-        myuser.setPassword(screat);
+        userEntity.setUsername(username);
+        userEntity.setPassword(screat);
 
-        myuser.login(new SaveListener<Myuser>() {
+        userEntity.login(new SaveListener<UserEntity>() {
 
             @Override
-            public void done(Myuser myuser, BmobException e) {
+            public void done(UserEntity userEntity, BmobException e) {
 
                 if (e == null) {
 

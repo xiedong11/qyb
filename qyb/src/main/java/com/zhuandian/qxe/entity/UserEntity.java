@@ -1,11 +1,11 @@
-package com.zhuandian.qxe.bean;
+package com.zhuandian.qxe.entity;
 
 import cn.bmob.v3.BmobUser;
 
 /**
  * Created by 谢栋 on 2016/9/7.
  */
-public class Myuser extends BmobUser{
+public class UserEntity extends BmobUser{
 
     private String realName;
     private String phone;

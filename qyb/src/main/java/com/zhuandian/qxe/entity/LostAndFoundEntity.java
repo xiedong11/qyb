@@ -1,4 +1,4 @@
-package com.zhuandian.qxe.bean;
+package com.zhuandian.qxe.entity;
 
 import cn.bmob.v3.BmobObject;
 
@@ -6,7 +6,7 @@ import cn.bmob.v3.BmobObject;
  * 失物招领内容的业务对象
  * Created by 谢栋 on 2017/1/14.
  */
-public class LostAndFound extends BmobObject{
+public class LostAndFoundEntity extends BmobObject{
 
     private String broadcastContent;   //用户需要广播的内容
     private String username;        //上传广播信息的用户信息

@@ -1,10 +1,10 @@
-package com.zhuandian.qxe.bean;
+package com.zhuandian.qxe.entity;
 
 /**
  * 新闻资讯的业务类
  * Created by 谢栋 on 2016/9/3.
  */
-public class NewsBean {
+public class NewsEntity {
 
     private String title;
     private String contentUrl;

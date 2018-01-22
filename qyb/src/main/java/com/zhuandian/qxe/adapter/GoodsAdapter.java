@@ -1,74 +1,46 @@
 package com.zhuandian.qxe.adapter;
 
 import android.content.Context;
+import android.databinding.DataBindingUtil;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
-import android.widget.ImageView;
-import android.widget.TextView;
 
-import com.zhuandian.qxe.bean.GoodsBean;
+import com.zhuandian.qxe.R;
+import com.zhuandian.qxe.base.binding.BaseBindingHolder;
+import com.zhuandian.qxe.databinding.ItemSecondGoodsBinding;
+import com.zhuandian.qxe.entity.GoodsEntity;
 
 import java.util.List;
 
 /**
  * Created by 谢栋 on 2016/8/13.
  */
-public class GoodsAdapter extends BaseAdapter {
+public class GoodsAdapter extends RecyclerView.Adapter<BaseBindingHolder<ItemSecondGoodsBinding>> {
+    private List<GoodsEntity> data;
+    private Context context;
 
-    private List<GoodsBean> mDatas;
-    private LayoutInflater   mInflater;
-
-    /**
-     * 构造方法
-     * @param datas
-     */
-    public GoodsAdapter(Context context , List<GoodsBean> datas ) {
-       mInflater =LayoutInflater.from(context);
-        mDatas   =datas;
+    public GoodsAdapter(List<GoodsEntity> data, Context context) {
+        this.data = data;
+        this.context = context;
     }
 
     @Override
-    public int getCount() {
-        return mDatas.size();
+    public BaseBindingHolder<ItemSecondGoodsBinding> onCreateViewHolder(ViewGroup parent, int viewType) {
+        ItemSecondGoodsBinding binding = DataBindingUtil.inflate(LayoutInflater.from(context), R.layout.item_second_goods, parent, false);
+        return new BaseBindingHolder(binding);
     }
 
     @Override
-    public Object getItem(int position) {
-        return mDatas.get(position);
+    public void onBindViewHolder(BaseBindingHolder<ItemSecondGoodsBinding> holder, int position) {
+//holder.getBinding().setVariable()
+//        final T item = mItems.get(position);
+//        holder.getBinding().setVariable(BR.item, item);
+        holder.getBinding().executePendingBindings();
     }
 
     @Override
-    public long getItemId(int position) {
-        return position;
-    }
-
-    /**
-     * 返回listview的item
-     * @param position
-     * @param convertView
-     * @param parent
-     * @return
-     */
-    @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
-        ViewHolder viewHolder;
-
-        if(convertView==null){
-
-        }
-
-        return null;
-    }
-
-
-    //ViewHolder加载布局控件
-    private class ViewHolder{
-        private TextView titleTextView;
-        private TextView contentTextView;
-        private ImageView mImageView;
-        private TextView priceTextView;
-
+    public int getItemCount() {
+        return data == null ? 0 : data.size();
     }
 }

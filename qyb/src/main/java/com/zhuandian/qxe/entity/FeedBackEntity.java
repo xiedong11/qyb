@@ -1,11 +1,11 @@
-package com.zhuandian.qxe.bean;
+package com.zhuandian.qxe.entity;
 
 import cn.bmob.v3.BmobObject;
 
 /**
  * Created by 谢栋 on 2016/9/2.
  */
-public class FeedBack extends BmobObject{
+public class FeedBackEntity extends BmobObject{
 
     private String phone;
     private String feedback;

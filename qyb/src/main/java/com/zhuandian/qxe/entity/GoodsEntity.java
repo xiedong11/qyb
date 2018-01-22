@@ -1,4 +1,4 @@
-package com.zhuandian.qxe.bean;
+package com.zhuandian.qxe.entity;
 
 import android.graphics.Bitmap;
 
@@ -7,7 +7,7 @@ import cn.bmob.v3.BmobObject;
 /**
  * Created by 谢栋 on 2016/8/13.
  */
-public class GoodsBean extends BmobObject{
+public class GoodsEntity extends BmobObject{
 
     private String goodsUrl;
     private String goodsTiltle;

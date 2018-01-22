@@ -10,7 +10,6 @@ import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,7 +20,7 @@ import android.widget.TextView;
 
 import com.zhuandian.qxe.R;
 import com.zhuandian.qxe.adapter.NewsAdapter;
-import com.zhuandian.qxe.bean.NewsBean;
+import com.zhuandian.qxe.entity.NewsEntity;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -39,7 +38,7 @@ import java.util.List;
 public class CommonNewsFragment extends Fragment implements AdapterView.OnItemClickListener {
     private static final int OK_DATA = 1;
     private ListView listView;
-    private List<NewsBean > newsBeans;
+    private List<NewsEntity> newsEntities;
     private NewsAdapter newsAdapter;
     private LinearLayout loadLinearLayout;   //用户等待视图
     private SwipeRefreshLayout swipeRefresh;
@@ -89,7 +88,7 @@ public class CommonNewsFragment extends Fragment implements AdapterView.OnItemCl
         //listview设置监听事件
         listView.setOnItemClickListener(this);
 
-        newsBeans = new ArrayList<NewsBean>();
+        newsEntities = new ArrayList<NewsEntity>();
 
         checkNewsType();
         return view;
@@ -137,7 +136,7 @@ public class CommonNewsFragment extends Fragment implements AdapterView.OnItemCl
 
                         Elements listItem = listName.getElementsByTag("li");
                         for(Element item : listItem){
-                            NewsBean newsBean = new NewsBean();
+                            NewsEntity newsEntity = new NewsEntity();
 
                             //爬取新闻的标题、时间跟连接
                             String title = item.getElementsByTag("a").text().trim();
@@ -149,16 +148,16 @@ public class CommonNewsFragment extends Fragment implements AdapterView.OnItemCl
 
 
                             //添加进集合
-                            newsBean.setTitle(title);
-                            newsBean.setContentUrl(contentUrl);
-                            newsBean.setTime(newsTime);
+                            newsEntity.setTitle(title);
+                            newsEntity.setContentUrl(contentUrl);
+                            newsEntity.setTime(newsTime);
 
-                            newsBeans.add(newsBean);
+                            newsEntities.add(newsEntity);
 
                         }
 
                     }
-                    newsAdapter = new NewsAdapter(getActivity() ,newsBeans);
+                    newsAdapter = new NewsAdapter(getActivity() , newsEntities);
 //                    listView.setAdapter(newsAdapter);
 
                     Message msg =new Message();
@@ -190,9 +189,9 @@ public class CommonNewsFragment extends Fragment implements AdapterView.OnItemCl
 
         //给Bundle绑定数据，
         Bundle bundle = new Bundle();
-        bundle.putString("newsUrl",newsBeans.get(position).getContentUrl());
+        bundle.putString("newsUrl", newsEntities.get(position).getContentUrl());
 
-        bundle.putString("newstitle",newsBeans.get(position).getTitle());
+        bundle.putString("newstitle", newsEntities.get(position).getTitle());
         intent.putExtras(bundle);
 
         startActivity(intent);

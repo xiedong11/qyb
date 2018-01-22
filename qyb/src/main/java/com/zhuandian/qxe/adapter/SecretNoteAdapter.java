@@ -9,7 +9,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.zhuandian.qxe.R;
-import com.zhuandian.qxe.bean.Sercet_NoteBean;
+import com.zhuandian.qxe.entity.SercetNoteEntity;
 
 import java.util.List;
 
@@ -18,7 +18,7 @@ import java.util.List;
  */
 public class SecretNoteAdapter extends RecyclerView.Adapter<MyViewHolder>{
 
-    private List<Sercet_NoteBean> mdatas;
+    private List<SercetNoteEntity> mdatas;
     private LayoutInflater inflater;
     private Context context;
 
@@ -39,7 +39,7 @@ public class SecretNoteAdapter extends RecyclerView.Adapter<MyViewHolder>{
         public void onItemLongClick(View v, int position);
     }
 
-    public SecretNoteAdapter( Context context ,List<Sercet_NoteBean> mdatas) {
+    public SecretNoteAdapter( Context context ,List<SercetNoteEntity> mdatas) {
         this.mdatas = mdatas;
         this.context = context;
         inflater = LayoutInflater.from(context);
@@ -114,7 +114,7 @@ public class SecretNoteAdapter extends RecyclerView.Adapter<MyViewHolder>{
     public void addData(int pos){
 
         //把要插入的内容添加到pos位置
-        mdatas.add(pos,new Sercet_NoteBean());
+        mdatas.add(pos,new SercetNoteEntity());
 
         //注意不是notifyDataSetChange()
         notifyItemInserted(pos);

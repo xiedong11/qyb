@@ -14,7 +14,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.zhuandian.qxe.R;
-import com.zhuandian.qxe.bean.Myuser;
+import com.zhuandian.qxe.entity.HeartShareEntity;
+import com.zhuandian.qxe.entity.UserEntity;
 import com.zhuandian.qxe.utils.myUtils.MyL;
 
 import cn.bmob.v3.BmobUser;
@@ -93,9 +94,9 @@ public class NewHeartShareFragment extends Fragment implements View.OnClickListe
 
         if (!"".equals(heartContent)) {
             pDialog.show();  //开始提交
-            Myuser user = BmobUser.getCurrentUser(Myuser.class);
+            UserEntity user = BmobUser.getCurrentUser(UserEntity.class);
             // 创建动态信息
-            com.zhuandian.qxe.bean.HeartShare post = new com.zhuandian.qxe.bean.HeartShare();
+            HeartShareEntity post = new HeartShareEntity();
             post.setContent(content.getText().toString());
             //添加一对一关联
             post.setAuthor(user);   //设置作者

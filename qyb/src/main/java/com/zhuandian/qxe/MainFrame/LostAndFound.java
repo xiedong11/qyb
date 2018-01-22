@@ -1,17 +1,15 @@
 package com.zhuandian.qxe.MainFrame;
 
 import android.graphics.Color;
-import android.os.Bundle;
 import android.support.design.widget.Snackbar;
-import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
 import com.zhuandian.qxe.R;
 import com.zhuandian.qxe.base.QYBActivity;
+import com.zhuandian.qxe.entity.LostAndFoundEntity;
 import com.zhuandian.qxe.service.QYBApplication;
 import com.zhuandian.qxe.utils.myUtils.MyL;
 
@@ -78,7 +76,7 @@ public class LostAndFound extends QYBActivity {
         if (!"".equals(broadStr)) {
             //执行后台存储操作
             pDialog.show();
-            com.zhuandian.qxe.bean.LostAndFound myBroadcast = new com.zhuandian.qxe.bean.LostAndFound();
+            LostAndFoundEntity myBroadcast = new LostAndFoundEntity();
             myBroadcast.setBroadcastContent(broadStr);
             myBroadcast.setUsername(username);
             myBroadcast.save(new SaveListener<String>() {

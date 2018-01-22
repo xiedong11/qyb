@@ -121,7 +121,7 @@ category#android.intent.category.LAUNCHER
 ADDED from AndroidManifest.xml:64:17
 	android:name
 		ADDED from AndroidManifest.xml:64:27
-activity#com.zhuandian.qxe.MainFrame.esGoods.ItemActivity
+activity#com.zhuandian.qxe.MainFrame.esGoods.old.ItemActivity
 ADDED from AndroidManifest.xml:67:9
 	android:theme
 		ADDED from AndroidManifest.xml:69:13

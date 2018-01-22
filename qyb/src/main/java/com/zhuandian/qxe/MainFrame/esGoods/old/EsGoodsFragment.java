@@ -1,4 +1,4 @@
-package com.zhuandian.qxe.MainFrame.esGoods;
+package com.zhuandian.qxe.MainFrame.esGoods.old;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -25,7 +25,7 @@ import android.widget.TextView;
 import com.zhuandian.qxe.R;
 import com.zhuandian.qxe.MainFrame.ListItemFragment;
 import com.zhuandian.qxe.adapter.MyESGoodsAdapter;
-import com.zhuandian.qxe.bean.GoodsBean;
+import com.zhuandian.qxe.entity.GoodsEntity;
 
 import java.io.BufferedInputStream;
 import java.io.IOException;
@@ -47,7 +47,7 @@ import cn.bmob.v3.listener.FindListener;
 public class EsGoodsFragment extends Fragment implements AbsListView.OnScrollListener, AdapterView.OnItemClickListener {
 
     private ListView listViewGoods;
-    private List<GoodsBean> beens;
+    private List<GoodsEntity> beens;
     private View mview;
     private LayoutInflater mInflater;
     private int index = 0;
@@ -162,7 +162,7 @@ public class EsGoodsFragment extends Fragment implements AbsListView.OnScrollLis
 
 //        footView.setVisibility(View.INVISIBLE);
 //        listViewGoods.removeFooterView(footView);
-        beens = new ArrayList<GoodsBean>();
+        beens = new ArrayList<GoodsEntity>();
 
         initData();
 
@@ -206,9 +206,9 @@ public class EsGoodsFragment extends Fragment implements AbsListView.OnScrollLis
         count=count+10;
 
         //查询数据库中的具体商品信息
-        final GoodsBean goodsBenn = new GoodsBean();
+        final GoodsEntity goodsBenn = new GoodsEntity();
 
-        BmobQuery<GoodsBean> query = new BmobQuery<GoodsBean>();
+        BmobQuery<GoodsEntity> query = new BmobQuery<GoodsEntity>();
         ////查询playerName叫“比目”的数据
         //        query.addWhereEqualTo("playerName", "比目");
         //返回50条数据，如果不加上这条语句，默认返回10条数据
@@ -219,9 +219,9 @@ public class EsGoodsFragment extends Fragment implements AbsListView.OnScrollLis
         query.setLimit(10);
         query.setSkip(count);
         //执行查询方法
-        query.findObjects(new FindListener<GoodsBean>() {
+        query.findObjects(new FindListener<GoodsEntity>() {
             @Override
-            public void done(List<GoodsBean> object, BmobException e) {
+            public void done(List<GoodsEntity> object, BmobException e) {
                 if (e == null) {
 
                     Log.i("xiedong",object.size()+"size");
@@ -235,7 +235,7 @@ public class EsGoodsFragment extends Fragment implements AbsListView.OnScrollLis
 
                     }
 //                    toast("查询成功：共"+object.size()+"条数据。");
-                    for (final GoodsBean goods : object) {
+                    for (final GoodsEntity goods : object) {
 
                       if(pullState==true) {   //下拉时数据装载在顶部位置
                           beens.add(0,goods);

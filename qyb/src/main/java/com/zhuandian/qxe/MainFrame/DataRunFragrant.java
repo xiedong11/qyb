@@ -15,7 +15,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.zhuandian.qxe.R;
-import com.zhuandian.qxe.bean.DataRunBean;
+import com.zhuandian.qxe.entity.DataRunEntity;
 import com.zhuandian.qxe.utils.myUtils.MyUtils;
 
 import java.text.ParseException;
@@ -211,7 +211,7 @@ public class DataRunFragrant extends Fragment implements View.OnClickListener {
      */
     private void addToRun() {
 
-        DataRunBean dataRunBeen  = new DataRunBean();
+        DataRunEntity dataRunBeen  = new DataRunEntity();
 
          int nowSum=xccSum+1;
 
@@ -241,12 +241,12 @@ public class DataRunFragrant extends Fragment implements View.OnClickListener {
     private int getNowSum_2(){
 
       int sum=0;
-        final DataRunBean dataRunBeen  = new DataRunBean();
+        final DataRunEntity dataRunBeen  = new DataRunEntity();
 
-        BmobQuery<DataRunBean> query = new BmobQuery<DataRunBean>();
-        List<BmobQuery<DataRunBean>> and = new ArrayList<BmobQuery<DataRunBean>>();
+        BmobQuery<DataRunEntity> query = new BmobQuery<DataRunEntity>();
+        List<BmobQuery<DataRunEntity>> and = new ArrayList<BmobQuery<DataRunEntity>>();
         //大于00：00：00
-        BmobQuery<DataRunBean> q1 = new BmobQuery<DataRunBean>();
+        BmobQuery<DataRunEntity> q1 = new BmobQuery<DataRunEntity>();
 //        String start = "2015-05-01 00:00:00";
         String start =MyUtils.decreaseTime(60) ;
 
@@ -261,7 +261,7 @@ public class DataRunFragrant extends Fragment implements View.OnClickListener {
         q1.addWhereGreaterThanOrEqualTo("createdAt",new BmobDate(date));
         and.add(q1);
         //小于23：59：59
-        BmobQuery<DataRunBean> q2 = new BmobQuery<DataRunBean>();
+        BmobQuery<DataRunEntity> q2 = new BmobQuery<DataRunEntity>();
         String end = MyUtils.currentTime();
         Log.i("xiedong","endTime "+end);
 
@@ -278,9 +278,9 @@ public class DataRunFragrant extends Fragment implements View.OnClickListener {
         query.and(and);
 
 
-        query.findObjects(new FindListener<DataRunBean>() {
+        query.findObjects(new FindListener<DataRunEntity>() {
             @Override
-            public void done(List<DataRunBean> dataRunBeens, BmobException e) {
+            public void done(List<DataRunEntity> dataRunBeens, BmobException e) {
 
                 if(e==null){
 
@@ -297,16 +297,16 @@ public class DataRunFragrant extends Fragment implements View.OnClickListener {
      */
     private int getNowSum() {
 
-        final DataRunBean dataRunBeen  = new DataRunBean();
-        BmobQuery<DataRunBean> query = new BmobQuery<DataRunBean>();
+        final DataRunEntity dataRunBeen  = new DataRunEntity();
+        BmobQuery<DataRunEntity> query = new BmobQuery<DataRunEntity>();
 ////查询playerName叫“比目”的数据
 //        query.addWhereEqualTo("playerName", "比目");
 //返回50条数据，如果不加上这条语句，默认返回10条数据
         query.setLimit(50);
 //执行查询方法
-        query.findObjects(new FindListener<DataRunBean>() {
+        query.findObjects(new FindListener<DataRunEntity>() {
             @Override
-            public void done(List<DataRunBean> object, BmobException e) {
+            public void done(List<DataRunEntity> object, BmobException e) {
                 if(e==null){
 
                     dataRunBeen.setXccSum(object.size());

@@ -15,7 +15,7 @@ import android.widget.TextView;
 import com.lidroid.xutils.DbUtils;
 import com.lidroid.xutils.exception.DbException;
 import com.zhuandian.qxe.R;
-import com.zhuandian.qxe.bean.Sercet_NoteBean;
+import com.zhuandian.qxe.entity.SercetNoteEntity;
 import com.zhuandian.qxe.utils.myUtils.MyUtils;
 
 import cn.pedant.SweetAlert.SweetAlertDialog;
@@ -68,7 +68,7 @@ public class New_Secret_Note extends Fragment {
 
 
                     //插入数据
-                    Sercet_NoteBean noteBean = new Sercet_NoteBean();
+                    SercetNoteEntity noteBean = new SercetNoteEntity();
 
                     String time[]=MyUtils.currentTime().split(" ");
                     String time1[] =time[0].split("-");

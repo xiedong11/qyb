@@ -20,8 +20,9 @@ import com.zhuandian.qxe.MainFrame.FeedBackFragment;
 import com.zhuandian.qxe.MainFrame.HomeFragment;
 import com.zhuandian.qxe.MainFrame.SettingFragment;
 import com.zhuandian.qxe.MainFrame.WKZXSFragment;
-import com.zhuandian.qxe.MainFrame.esGoods.EsGoodsFragment;
-import com.zhuandian.qxe.MainFrame.esGoods.UploadGoodsFragment;
+import com.zhuandian.qxe.MainFrame.esGoods.SecondHandGoodsFragment;
+import com.zhuandian.qxe.MainFrame.esGoods.old.EsGoodsFragment;
+import com.zhuandian.qxe.MainFrame.esGoods.old.UploadGoodsFragment;
 import com.zhuandian.qxe.MainFrame.schoolNews.NewsMainActivity;
 
 import cn.bmob.push.BmobPush;
@@ -177,7 +178,7 @@ public class MenuActivity extends FragmentActivity implements View.OnClickListen
         }else if (view == itemDataRun){
             changeFragment(new DataRunFragrant());
         }else if (view == itemESGoods){
-            changeFragment(new EsGoodsFragment());
+            changeFragment(new SecondHandGoodsFragment());
         }else if (view == itemAboutUs){
             changeFragment(new AboutUsFragrant());
         }else if (view == itemWKZX){

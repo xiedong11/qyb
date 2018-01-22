@@ -1,4 +1,4 @@
-package com.zhuandian.qxe.MainFrame.esGoods;
+package com.zhuandian.qxe.MainFrame.esGoods.old;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -26,8 +26,8 @@ import com.avos.avoscloud.im.v2.AVIMClient;
 import com.avos.avoscloud.im.v2.AVIMException;
 import com.avos.avoscloud.im.v2.callback.AVIMClientCallback;
 import com.zhuandian.qxe.R;
-import com.zhuandian.qxe.bean.GoodsBean;
-import com.zhuandian.qxe.bean.Myuser;
+import com.zhuandian.qxe.entity.GoodsEntity;
+import com.zhuandian.qxe.entity.UserEntity;
 import com.zhuandian.qxe.utils.myUtils.MyImageCache;
 
 import java.io.InputStream;
@@ -94,9 +94,9 @@ public class ItemActivity extends ActionBarActivity {
         Bundle bundle =getIntent().getExtras();
         Serializable serializable = bundle.getSerializable("goodsInfo");
 
-        if(serializable != null && serializable instanceof GoodsBean)
+        if(serializable != null && serializable instanceof GoodsEntity)
         {
-            final GoodsBean g = (GoodsBean)serializable;
+            final GoodsEntity g = (GoodsEntity)serializable;
             Log.i("123", "--url=" + g.getGoodsUrl());
             Log.i("123", "--title="+g.getName());
 
@@ -133,7 +133,7 @@ public class ItemActivity extends ActionBarActivity {
 //                                    Intent intent=new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + g.getPhone()));
 //                                    startActivity(intent);
 
-                                    showIMActivity(Myuser.getCurrentUser().getUsername(),g.getName());
+                                    showIMActivity(UserEntity.getCurrentUser().getUsername(),g.getName());
 
 
                                 }
