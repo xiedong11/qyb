@@ -1,9 +1,9 @@
-package com.zhuandian.qxe.bean;
+package com.zhuandian.qxe.entity;
 
 /**
  * Created by 谢栋 on 2016/11/3.
  */
-public class Sercet_NoteBean {
+public class SercetNoteEntity {
 
     private int id;
     private String time;

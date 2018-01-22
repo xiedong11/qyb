@@ -1,4 +1,4 @@
-package com.zhuandian.qxe.bean;
+package com.zhuandian.qxe.entity;
 
 import java.io.Serializable;
 
@@ -11,12 +11,12 @@ import cn.bmob.v3.datatype.BmobRelation;
  *
  * Created by 谢栋 on 2016/12/28.
  */
-public class HeartShare extends BmobObject  implements Serializable {
+public class HeartShareEntity extends BmobObject  implements Serializable {
 
     private String username;
     private String content;
     private String contentType;
-    private Myuser author;       //发布动态的作者，一对一的思想
+    private UserEntity author;       //发布动态的作者，一对一的思想
     private BmobRelation likes;    //存放喜欢该动态的用户（点赞人数）
     private int commentCount;
 
@@ -44,11 +44,11 @@ public class HeartShare extends BmobObject  implements Serializable {
         this.likes = likes;
     }
 
-    public Myuser getAuthor() {
+    public UserEntity getAuthor() {
         return author;
     }
 
-    public void setAuthor(Myuser author) {
+    public void setAuthor(UserEntity author) {
         this.author = author;
     }
 

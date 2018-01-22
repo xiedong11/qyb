@@ -17,6 +17,7 @@ import android.widget.ListView;
 
 import com.zhuandian.qxe.R;
 import com.zhuandian.qxe.adapter.HeartShareAdapter;
+import com.zhuandian.qxe.entity.HeartShareEntity;
 import com.zhuandian.qxe.utils.GlobalVariable;
 import com.zhuandian.qxe.utils.myUtils.MyL;
 import com.zhuandian.qxe.utils.myUtils.MyUtils;
@@ -37,7 +38,7 @@ public class HeartShareListFragment extends Fragment implements AbsListView.OnSc
     private HeartShareAdapter myAdapter;
 
     private SwipeRefreshLayout swipeRefresh;
-    List<com.zhuandian.qxe.bean.HeartShare> mDatas = new ArrayList<>();    //数据集合
+    List<HeartShareEntity> mDatas = new ArrayList<>();    //数据集合
 
     private View view;
     private FloatingActionButton fab;
@@ -62,15 +63,15 @@ public class HeartShareListFragment extends Fragment implements AbsListView.OnSc
      */
     private void loadDatas() {
 
-//        Myuser user = BmobUser.getCurrentUser(Myuser.class);
-        BmobQuery<com.zhuandian.qxe.bean.HeartShare> query = new BmobQuery<com.zhuandian.qxe.bean.HeartShare>();
+//        UserEntity user = BmobUser.getCurrentUser(UserEntity.class);
+        BmobQuery<HeartShareEntity> query = new BmobQuery<HeartShareEntity>();
 //        query.addWhereEqualTo("author", user);    // 查询当前用户的所有帖子
         query.order("-updatedAt");
         query.include("author");// 希望在查询帖子信息的同时也把发布人的信息查询出来
-        query.findObjects(new FindListener<com.zhuandian.qxe.bean.HeartShare>() {
+        query.findObjects(new FindListener<HeartShareEntity>() {
 
             @Override
-            public void done(List<com.zhuandian.qxe.bean.HeartShare> object, BmobException e) {
+            public void done(List<HeartShareEntity> object, BmobException e) {
                 if(e==null){
 
 

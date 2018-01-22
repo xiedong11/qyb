@@ -22,7 +22,7 @@ import com.lidroid.xutils.db.sqlite.WhereBuilder;
 import com.lidroid.xutils.exception.DbException;
 import com.zhuandian.qxe.R;
 import com.zhuandian.qxe.adapter.SecretNoteAdapter;
-import com.zhuandian.qxe.bean.Sercet_NoteBean;
+import com.zhuandian.qxe.entity.SercetNoteEntity;
 import com.zhuandian.qxe.utils.myUtils.MyBehavior;
 import com.zhuandian.qxe.utils.myUtils.MyL;
 
@@ -38,11 +38,11 @@ public class Secret_Note_Fram extends Fragment {
 
     private View view;
     private RecyclerView recyclerView;
-    private List<Sercet_NoteBean> mdatas;
+    private List<SercetNoteEntity> mdatas;
     private SecretNoteAdapter secretNoteAdapter;
 
     private DbUtils dbUtils;
-    private List<Sercet_NoteBean> list;
+    private List<SercetNoteEntity> list;
 
     @Nullable
     @Override
@@ -62,13 +62,13 @@ public class Secret_Note_Fram extends Fragment {
 
 //        try {
 //            //删除所有
-//            dbUtils.delete(Sercet_NoteBean.class, WhereBuilder.b());
-//            dbUtils.delete(Sercet_NoteBean.class, WhereBuilder.b("id","=",1));   //删除对应的列表名，操作符合 ，具体值
+//            dbUtils.delete(SercetNoteEntity.class, WhereBuilder.b());
+//            dbUtils.delete(SercetNoteEntity.class, WhereBuilder.b("id","=",1));   //删除对应的列表名，操作符合 ，具体值
 //        } catch (DbException e) {
 //            e.printStackTrace();
 //        }
 
-////        Sercet_NoteBean noteBean = new Sercet_NoteBean();
+////        SercetNoteEntity noteBean = new SercetNoteEntity();
 ////        noteBean.setTitle("谢栋");
 ////        noteBean.setContent("内容");
 //
@@ -114,7 +114,7 @@ public class Secret_Note_Fram extends Fragment {
                                 sDialog.cancel();
 
                                 try {
-                                    dbUtils.delete(Sercet_NoteBean.class, WhereBuilder.b("id","like",list.get(position).getId()));
+                                    dbUtils.delete(SercetNoteEntity.class, WhereBuilder.b("id","like",list.get(position).getId()));
                                     MyL.e(position+"---"+list.get(position).getContent());
 
                                 } catch (DbException e) {
@@ -171,11 +171,11 @@ public class Secret_Note_Fram extends Fragment {
      * 装载数据
      */
     private void initData() {
-        mdatas = new ArrayList<Sercet_NoteBean>();
+        mdatas = new ArrayList<SercetNoteEntity>();
 
 
         try {
-           list = dbUtils.findAll(Sercet_NoteBean.class);//通过类型查找
+           list = dbUtils.findAll(SercetNoteEntity.class);//通过类型查找
 
             //如果返回的list不为空，为mdatas装载数据
             if (list != null) {

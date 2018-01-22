@@ -16,8 +16,8 @@ import android.widget.TextView;
 
 import com.zhuandian.qxe.R;
 import com.zhuandian.qxe.adapter.HeartShareAdapter;
-import com.zhuandian.qxe.bean.HeartShare;
-import com.zhuandian.qxe.bean.Myuser;
+import com.zhuandian.qxe.entity.HeartShareEntity;
+import com.zhuandian.qxe.entity.UserEntity;
 import com.zhuandian.qxe.utils.GlobalVariable;
 import com.zhuandian.qxe.utils.myUtils.MyL;
 import com.zhuandian.qxe.utils.myUtils.MyUtils;
@@ -41,7 +41,7 @@ public class CurrentUserShareList extends Fragment implements AbsListView.OnScro
     private HeartShareAdapter myAdapter;
 
     private SwipeRefreshLayout swipeRefresh;
-    List<com.zhuandian.qxe.bean.HeartShare> mDatas = new ArrayList<>();    //数据集合
+    List<HeartShareEntity> mDatas = new ArrayList<>();    //数据集合
 
     private View view;
 
@@ -66,15 +66,15 @@ public class CurrentUserShareList extends Fragment implements AbsListView.OnScro
     private void loadDatas() {
 
 
-        Myuser user = BmobUser.getCurrentUser(Myuser.class);
-        BmobQuery<HeartShare> query = new BmobQuery<com.zhuandian.qxe.bean.HeartShare>();
+        UserEntity user = BmobUser.getCurrentUser(UserEntity.class);
+        BmobQuery<HeartShareEntity> query = new BmobQuery<HeartShareEntity>();
         query.addWhereEqualTo("author", user);    // 查询当前用户的所有帖子
         query.order("-updatedAt");
         query.include("author");// 希望在查询帖子信息的同时也把发布人的信息查询出来
-        query.findObjects(new FindListener<HeartShare>() {
+        query.findObjects(new FindListener<HeartShareEntity>() {
 
             @Override
-            public void done(List<com.zhuandian.qxe.bean.HeartShare> object, BmobException e) {
+            public void done(List<HeartShareEntity> object, BmobException e) {
                 if (e == null) {
 
                     mDatas = object;   //查询到的数据赋值给mDatas
@@ -164,7 +164,7 @@ public class CurrentUserShareList extends Fragment implements AbsListView.OnScro
                     public void onClick(final View v) {
 
 
-                        HeartShare share = new HeartShare();
+                        HeartShareEntity share = new HeartShareEntity();
                         share.setObjectId(mDatas.get(position).getObjectId());  //删除当前position下ObjectId()为对应ObjectId()的动态
                         share.delete(new UpdateListener() {
                             @Override

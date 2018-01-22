@@ -16,7 +16,7 @@ import com.lidroid.xutils.DbUtils;
 import com.lidroid.xutils.db.sqlite.WhereBuilder;
 import com.lidroid.xutils.exception.DbException;
 import com.zhuandian.qxe.R;
-import com.zhuandian.qxe.bean.Sercet_NoteBean;
+import com.zhuandian.qxe.entity.SercetNoteEntity;
 
 import cn.pedant.SweetAlert.SweetAlertDialog;
 
@@ -68,7 +68,7 @@ public class Secret_note extends Activity implements View.OnClickListener {
 
                         //删除所有数据记录
                         try {
-                            dbUtils.delete(Sercet_NoteBean.class, WhereBuilder.b());
+                            dbUtils.delete(SercetNoteEntity.class, WhereBuilder.b());
                             new SweetAlertDialog(Secret_note.this,SweetAlertDialog.SUCCESS_TYPE)
                                     .setTitleText("清除成功")
                                     .setContentText("已成功清除所有私密记录！")

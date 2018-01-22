@@ -17,9 +17,9 @@ import android.widget.TextView;
 
 import com.zhuandian.qxe.R;
 import com.zhuandian.qxe.adapter.UserCommentAdapter;
-import com.zhuandian.qxe.bean.Comment;
-import com.zhuandian.qxe.bean.HeartShare;
-import com.zhuandian.qxe.bean.Myuser;
+import com.zhuandian.qxe.entity.CommentEntity;
+import com.zhuandian.qxe.entity.HeartShareEntity;
+import com.zhuandian.qxe.entity.UserEntity;
 import com.zhuandian.qxe.utils.GlobalVariable;
 import com.zhuandian.qxe.utils.myUtils.MyL;
 import com.zhuandian.qxe.utils.myUtils.MyUtils;
@@ -43,7 +43,7 @@ import cn.pedant.SweetAlert.SweetAlertDialog;
 public class HeartShareItemFragment extends Fragment implements View.OnTouchListener, View.OnClickListener {
     private static boolean LIKES_FLAG = true; //点赞与取消点赞的标志位
     private View view;
-    private HeartShare mDatas;
+    private HeartShareEntity mDatas;
     private TextView shareType, username, time, content, comment, likes;  //布局上的各个文字内容
     private ListView listView;
     private TextView submitComment;
@@ -75,18 +75,18 @@ public class HeartShareItemFragment extends Fragment implements View.OnTouchList
 
     private void getAllUserComment() {
 
-        BmobQuery<Comment> query = new BmobQuery<Comment>();
+        BmobQuery<CommentEntity> query = new BmobQuery<CommentEntity>();
         //用此方式可以构造一个BmobPointer对象。只需要设置objectId就行
-        HeartShare post = new HeartShare();
+        HeartShareEntity post = new HeartShareEntity();
         post.setObjectId(mDatas.getObjectId());   //得到当前动态的Id号，
         query.order("-updatedAt");
         query.addWhereEqualTo("heartshare",new BmobPointer(post));
         //希望同时查询该评论的发布者的信息，以及该帖子的作者的信息，这里用到上面`include`的并列对象查询和内嵌对象的查询
         query.include("myuser,heartshare.auther");
-        query.findObjects(new FindListener<Comment>() {
+        query.findObjects(new FindListener<CommentEntity>() {
 
             @Override
-            public void done(List<Comment> objects, BmobException e) {
+            public void done(List<CommentEntity> objects, BmobException e) {
 
                 if(e==null) {
                     //得到数据源后直接绑定到listview
@@ -121,7 +121,7 @@ public class HeartShareItemFragment extends Fragment implements View.OnTouchList
         setOrRemoveLikes.setOnClickListener(this);
 
         Bundle bundle = getArguments();
-        mDatas = (HeartShare) bundle.getSerializable("item");
+        mDatas = (HeartShareEntity) bundle.getSerializable("item");
         MyL.e(mDatas.getContent());
 
         //给控件装值
@@ -210,8 +210,8 @@ public class HeartShareItemFragment extends Fragment implements View.OnTouchList
      */
     private void setAndRemoveLikesCount() {
 
-        Myuser user = BmobUser.getCurrentUser(Myuser.class);
-        HeartShare post = new HeartShare();
+        UserEntity user = BmobUser.getCurrentUser(UserEntity.class);
+        HeartShareEntity post = new HeartShareEntity();
         post.setObjectId(mDatas.getObjectId());   //设置当前动态的id
        //将当前用户添加到Post表中的likes字段值中，表明当前用户喜欢该帖子
         BmobRelation relation = new BmobRelation();
@@ -249,14 +249,14 @@ public class HeartShareItemFragment extends Fragment implements View.OnTouchList
         String userComment = commentContent.getText().toString();  //得到用户输入框的评论内容
         if (!"".equals(userComment)) {
             pDialog.show();  //打开用户等待对话框
-            Myuser user = BmobUser.getCurrentUser(Myuser.class);  //得到当前用户
-            HeartShare post = new HeartShare();   //当前动态内容
+            UserEntity user = BmobUser.getCurrentUser(UserEntity.class);  //得到当前用户
+            HeartShareEntity post = new HeartShareEntity();   //当前动态内容
             post.setObjectId(mDatas.getObjectId());  //得到当前的动态的id，与评论建立关联
-            final Comment comment = new Comment();
-            comment.setContent(userComment);
-            comment.setMyuser(user);
-            comment.setHeartshare(post);
-            comment.save(new SaveListener<String>() {
+            final CommentEntity commentEntity = new CommentEntity();
+            commentEntity.setContent(userComment);
+            commentEntity.setUserEntity(user);
+            commentEntity.setHeartshare(post);
+            commentEntity.save(new SaveListener<String>() {
 
                 @Override
                 public void done(String objectId, BmobException e) {
@@ -290,15 +290,15 @@ public class HeartShareItemFragment extends Fragment implements View.OnTouchList
     private void setLikesCount(String objectId, final TextView likes) {
 
         // 查询喜欢这个帖子的所有用户，因此查询的是用户表
-        BmobQuery<Myuser> query = new BmobQuery<Myuser>();
-        HeartShare post = new HeartShare();
+        BmobQuery<UserEntity> query = new BmobQuery<UserEntity>();
+        HeartShareEntity post = new HeartShareEntity();
         post.setObjectId(objectId);
 //likes是Post表中的字段，用来存储所有喜欢该帖子的用户
         query.addWhereRelatedTo("likes", new BmobPointer(post));
-        query.findObjects(new FindListener<Myuser>() {
+        query.findObjects(new FindListener<UserEntity>() {
 
             @Override
-            public void done(List<Myuser> object,BmobException e) {
+            public void done(List<UserEntity> object, BmobException e) {
                 if(e==null){
                     MyL.e("查询个数：" + object.size());
                     likes.setText(object.size()+"");   //设置点赞个数
@@ -321,17 +321,17 @@ public class HeartShareItemFragment extends Fragment implements View.OnTouchList
 
 
 
-        BmobQuery<Comment> query = new BmobQuery<Comment>();
+        BmobQuery<CommentEntity> query = new BmobQuery<CommentEntity>();
         //用此方式可以构造一个BmobPointer对象。只需要设置objectId就行
-        HeartShare post = new HeartShare();
+        HeartShareEntity post = new HeartShareEntity();
         post.setObjectId(objectId);   //得到当前动态的Id号，
         query.addWhereEqualTo("heartshare",new BmobPointer(post));
         //希望同时查询该评论的发布者的信息，以及该帖子的作者的信息，这里用到上面`include`的并列对象查询和内嵌对象的查询
         query.include("myuser,heartshare.auther");
-        query.findObjects(new FindListener<Comment>() {
+        query.findObjects(new FindListener<CommentEntity>() {
 
             @Override
-            public void done(List<Comment> objects, BmobException e) {
+            public void done(List<CommentEntity> objects, BmobException e) {
 
                 if(e==null) {
                     countView.setText(objects.size()+"");

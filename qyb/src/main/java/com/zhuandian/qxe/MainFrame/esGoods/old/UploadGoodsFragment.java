@@ -1,4 +1,4 @@
-package com.zhuandian.qxe.MainFrame.esGoods;
+package com.zhuandian.qxe.MainFrame.esGoods.old;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -20,7 +20,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.zhuandian.qxe.R;
-import com.zhuandian.qxe.bean.GoodsBean;
+import com.zhuandian.qxe.entity.GoodsEntity;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -46,7 +46,7 @@ public class UploadGoodsFragment extends Fragment {
     private EditText phoneEditText;
     private EditText priceEditText;
     private Button commitButton;
-    private GoodsBean goodsBenn;
+    private GoodsEntity goodsBenn;
     private SweetAlertDialog pDialog;
     private TextView commit;
 
@@ -123,7 +123,7 @@ public class UploadGoodsFragment extends Fragment {
         }else {
 
             Log.i("xiedong：", "不该进来哇");
-            goodsBenn = new GoodsBean();
+            goodsBenn = new GoodsEntity();
             goodsBenn.setPrice(price);
             goodsBenn.setName(name);
             goodsBenn.setPhone(phone);
@@ -183,14 +183,12 @@ public class UploadGoodsFragment extends Fragment {
 
     //调用摄像机拍照并存储在指定位置
     private void takePhoto() {
-        // TODO Auto-generated method stub
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         startActivityForResult(intent, 1);
     }
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        // TODO Auto-generated method stub
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode == Activity.RESULT_OK) {
             String sdStatus = Environment.getExternalStorageState();

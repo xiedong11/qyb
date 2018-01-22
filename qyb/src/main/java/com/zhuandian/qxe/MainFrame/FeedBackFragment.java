@@ -12,7 +12,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.zhuandian.qxe.R;
-import com.zhuandian.qxe.bean.FeedBack;
+import com.zhuandian.qxe.entity.FeedBackEntity;
 
 import cn.bmob.v3.Bmob;
 import cn.bmob.v3.exception.BmobException;
@@ -58,7 +58,7 @@ public class FeedBackFragment extends Fragment{
                 pDialog.show();
 
 
-                FeedBack feedBack = new FeedBack();
+                FeedBackEntity feedBackEntity = new FeedBackEntity();
 
                 String phone = phoneEditText.getText().toString();
                 String feedbackString = feedbackEditText.getText().toString();
@@ -71,9 +71,9 @@ public class FeedBackFragment extends Fragment{
                             .show();
                 }else{
 
-                    feedBack.setPhone(phone);
-                    feedBack.setFeedback(feedbackString);
-                    feedBack.save(new SaveListener<String>() {
+                    feedBackEntity.setPhone(phone);
+                    feedBackEntity.setFeedback(feedbackString);
+                    feedBackEntity.save(new SaveListener<String>() {
                         @Override
                         public void done(String s, BmobException e) {
 

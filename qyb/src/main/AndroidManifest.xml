@@ -81,7 +81,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainFrame.esGoods.ItemActivity"
+            android:name=".MainFrame.esGoods.old.ItemActivity"
             android:theme="@style/ItemActivity" />
         <activity
             android:name=".MainFrame.schoolNews.NewsItemActivity"

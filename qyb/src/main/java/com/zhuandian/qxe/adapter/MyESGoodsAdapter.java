@@ -17,7 +17,7 @@ import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.Volley;
 import com.zhuandian.qxe.R;
-import com.zhuandian.qxe.bean.GoodsBean;
+import com.zhuandian.qxe.entity.GoodsEntity;
 import com.zhuandian.qxe.utils.myUtils.MyImageCache;
 
 import java.io.IOException;
@@ -36,11 +36,11 @@ import java.util.List;
 public class MyESGoodsAdapter extends BaseAdapter {
 
     private LayoutInflater mInflater;
-    private List<GoodsBean> beens;
+    private List<GoodsEntity> beens;
 
     private RequestQueue queue;   //volley请求
 
-    public MyESGoodsAdapter(Context context, List<GoodsBean> datas) {
+    public MyESGoodsAdapter(Context context, List<GoodsEntity> datas) {
         mInflater = LayoutInflater.from(context);
         beens = datas;
 //       Log.i("xiedong",beens.get(9).getGoodsTiltle()+"");
@@ -87,7 +87,7 @@ public class MyESGoodsAdapter extends BaseAdapter {
         }
 
 
-        GoodsBean mGoodsBenn = beens.get(position);
+        GoodsEntity mGoodsBenn = beens.get(position);
         viewHolder.title.setText(mGoodsBenn.getGoodsTiltle() + "");
         viewHolder.content.setText(mGoodsBenn.getGoodsContent() + "");
         viewHolder.price.setText("￥" + mGoodsBenn.getPrice());

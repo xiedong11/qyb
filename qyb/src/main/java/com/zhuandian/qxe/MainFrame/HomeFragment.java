@@ -26,7 +26,7 @@ import com.zhuandian.qxe.ExtralModule.wkzxs.XLActivity;
 import com.zhuandian.qxe.ExtralModule.wkzxs.ZHLActivity;
 import com.zhuandian.qxe.MenuActivity;
 import com.zhuandian.qxe.R;
-import com.zhuandian.qxe.bean.LostAndFound;
+import com.zhuandian.qxe.entity.LostAndFoundEntity;
 import com.zhuandian.qxe.utils.MyView.AlwaysMarqueeTextView;
 
 import java.util.List;
@@ -64,16 +64,16 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
      * 同步失物招领信息
      */
     private void syncLostInfo() {
-        BmobQuery<LostAndFound> query = new BmobQuery<LostAndFound>();
+        BmobQuery<LostAndFoundEntity> query = new BmobQuery<LostAndFoundEntity>();
         query.order("-updatedAt");
         query.setLimit(3);
-        query.findObjects(new FindListener<LostAndFound>() {
+        query.findObjects(new FindListener<LostAndFoundEntity>() {
             @Override
-            public void done(List<LostAndFound> object, BmobException e) {
+            public void done(List<LostAndFoundEntity> object, BmobException e) {
                 StringBuilder sb = new StringBuilder();
 
                 if (e == null) {
-                    for (LostAndFound info : object) {
+                    for (LostAndFoundEntity info : object) {
                         sb.append(info.getUsername() + " 说 :    ");
                         sb.append(info.getBroadcastContent() + ".          ");
                     }

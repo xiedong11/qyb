@@ -8,7 +8,7 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.zhuandian.qxe.R;
-import com.zhuandian.qxe.bean.Comment;
+import com.zhuandian.qxe.entity.CommentEntity;
 import com.zhuandian.qxe.utils.myUtils.MyL;
 import com.zhuandian.qxe.utils.myUtils.MyUtils;
 
@@ -20,10 +20,10 @@ import java.util.List;
  */
 public class UserCommentAdapter extends BaseAdapter{
 
-    private List<Comment> mDatas;
+    private List<CommentEntity> mDatas;
     private LayoutInflater inflater;
 
-    public UserCommentAdapter(Context context, List<Comment> mDatas) {
+    public UserCommentAdapter(Context context, List<CommentEntity> mDatas) {
         this.mDatas = mDatas;
         this.inflater = LayoutInflater.from(context);
     }
@@ -78,7 +78,7 @@ public class UserCommentAdapter extends BaseAdapter{
 
         }
         holder.content.setText(mDatas.get(position).getContent());   //设置评论内容
-        holder.name.setText(mDatas.get(position).getMyuser().getUsername());   //设置评论者信息
+        holder.name.setText(mDatas.get(position).getUserEntity().getUsername());   //设置评论者信息
 
         return convertView;
     }

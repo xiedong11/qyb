@@ -14,7 +14,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.zhuandian.qxe.R;
-import com.zhuandian.qxe.bean.Myuser;
+import com.zhuandian.qxe.entity.UserEntity;
 
 import cn.bmob.v3.Bmob;
 import cn.bmob.v3.exception.BmobException;
@@ -29,7 +29,7 @@ public class RegisterFragment extends Fragment {
     private View view;
     private EditText nikename,password,repassword,email,real_name,phone;
     private Button register;
-    private Myuser myuser;
+    private UserEntity userEntity;
     private AlertDialog dialog;
 
     @Nullable
@@ -51,7 +51,7 @@ public class RegisterFragment extends Fragment {
         real_name = (EditText) view.findViewById(R.id.real_name);
         phone = (EditText) view.findViewById(R.id.phone);
         register = (Button) view.findViewById(R.id.register);
-        myuser = new Myuser();
+        userEntity = new UserEntity();
 
        register.setOnClickListener(new View.OnClickListener() {
            @Override
@@ -82,14 +82,14 @@ public class RegisterFragment extends Fragment {
                    dialog = new SpotsDialog(getActivity(), "\n正在注册...");
 
                    dialog.show();
-                   myuser.setUsername(nikename.getText().toString());
-                   myuser.setPassword(password.getText().toString());
-                   myuser.setEmail(email.getText().toString());
+                   userEntity.setUsername(nikename.getText().toString());
+                   userEntity.setPassword(password.getText().toString());
+                   userEntity.setEmail(email.getText().toString());
 
                    Log.i("xiedong", email.getText().toString());
-                   myuser.signUp(new SaveListener<Myuser>() {
+                   userEntity.signUp(new SaveListener<UserEntity>() {
                        @Override
-                       public void done(Myuser myuser, BmobException e) {
+                       public void done(UserEntity userEntity, BmobException e) {
 
                            if (e == null) {
                                dialog.dismiss();
@@ -97,7 +97,7 @@ public class RegisterFragment extends Fragment {
                                        .setTitleText("好的嘛 !")
                                        .setContentText("注册成功啦，请点击返回登陆界面")
                                        .show();
-//                           Toast.makeText(getActivity(),"注册成功"+myuser.toString(),Toast.LENGTH_SHORT).show();
+//                           Toast.makeText(getActivity(),"注册成功"+userEntity.toString(),Toast.LENGTH_SHORT).show();
                            } else {
                                dialog.dismiss();
                                new SweetAlertDialog(getActivity(), SweetAlertDialog.ERROR_TYPE)

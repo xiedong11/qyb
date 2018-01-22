@@ -1,6 +1,5 @@
 package com.zhuandian.qxe.MainFrame.schoolNews;
 
-import android.app.Activity;
 import android.graphics.Bitmap;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -17,7 +16,7 @@ import com.android.volley.toolbox.ImageRequest;
 import com.android.volley.toolbox.Volley;
 import com.zhuandian.qxe.R;
 import com.zhuandian.qxe.base.QYBActivity;
-import com.zhuandian.qxe.bean.NewsBean;
+import com.zhuandian.qxe.entity.NewsEntity;
 import com.zhuandian.qxe.utils.GlobalVariable;
 
 import org.jsoup.Jsoup;
@@ -35,8 +34,8 @@ import butterknife.BindView;
  */
 public class NewsItemActivity extends QYBActivity {
 
-    private NewsBean newsBean;
-    private List<NewsBean> newsBeans;
+    private NewsEntity newsEntity;
+    private List<NewsEntity> newsEntities;
 
     private RequestQueue queue;
 
@@ -77,7 +76,7 @@ public class NewsItemActivity extends QYBActivity {
 
     @Override
     public void setModle() {
-        newsBean = new NewsBean();
+        newsEntity = new NewsEntity();
         //创建一个Volley请求队列
         queue = Volley.newRequestQueue(this);
         //得到Bundle对象，用户获取newsFragment传递过来的数据
@@ -89,10 +88,10 @@ public class NewsItemActivity extends QYBActivity {
     }
 
 
-    private class NewsTask extends AsyncTask<String, Void, NewsBean> {
+    private class NewsTask extends AsyncTask<String, Void, NewsEntity> {
 
         @Override
-        protected NewsBean doInBackground(String... params) {
+        protected NewsEntity doInBackground(String... params) {
 
             Document doc;
             String image2 = "";
@@ -125,7 +124,7 @@ public class NewsItemActivity extends QYBActivity {
                     String text = listUrl.getElementsByTag("span").text();
 
                     Log.i("xiedong", image1 + text);
-                    newsBean.setItemContent(text);
+                    newsEntity.setItemContent(text);
 
 //                    content.setText(text);
 
@@ -136,13 +135,13 @@ public class NewsItemActivity extends QYBActivity {
                 e.printStackTrace();
             }
 
-            return newsBean;
+            return newsEntity;
 
         }
 
         @Override
-        protected void onPostExecute(NewsBean newsBean) {
-            content.setText(newsBean.getItemContent());
+        protected void onPostExecute(NewsEntity newsEntity) {
+            content.setText(newsEntity.getItemContent());
             title.setText(newsTitle);
         }
     }

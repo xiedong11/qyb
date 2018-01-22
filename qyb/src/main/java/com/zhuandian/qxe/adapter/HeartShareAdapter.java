@@ -8,9 +8,9 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.zhuandian.qxe.R;
-import com.zhuandian.qxe.bean.Comment;
-import com.zhuandian.qxe.bean.HeartShare;
-import com.zhuandian.qxe.bean.Myuser;
+import com.zhuandian.qxe.entity.CommentEntity;
+import com.zhuandian.qxe.entity.HeartShareEntity;
+import com.zhuandian.qxe.entity.UserEntity;
 import com.zhuandian.qxe.utils.myUtils.MyL;
 import com.zhuandian.qxe.utils.myUtils.MyUtils;
 
@@ -26,7 +26,7 @@ import cn.bmob.v3.listener.FindListener;
  */
 public class HeartShareAdapter extends BaseAdapter{
 
-    private List<HeartShare> mDatas;
+    private List<HeartShareEntity> mDatas;
     private LayoutInflater inflater;
 
     /**
@@ -34,7 +34,7 @@ public class HeartShareAdapter extends BaseAdapter{
      * @param context
      * @param mDatas
      */
-    public HeartShareAdapter(Context context ,List<HeartShare> mDatas) {
+    public HeartShareAdapter(Context context ,List<HeartShareEntity> mDatas) {
         this.mDatas = mDatas;
         this.inflater = LayoutInflater.from(context);
     }
@@ -76,21 +76,21 @@ public class HeartShareAdapter extends BaseAdapter{
             viewHolder = (ViewHolder) convertView.getTag();
         }
 
-        HeartShare heartShare = mDatas.get(position);   //得到当前position对应的业务类
+        HeartShareEntity heartShareEntity = mDatas.get(position);   //得到当前position对应的业务类
 
 
 
 
         //给控件装值
-        viewHolder.username.setText(heartShare.getUsername());
-        viewHolder.shareType.setText(heartShare.getContentType());
-        setCommentCount(heartShare.getObjectId(),viewHolder.comment);   //评论个数
-        viewHolder.content.setText(heartShare.getContent());
-        setLikesCount(heartShare.getObjectId(),viewHolder.likes);   //设置点赞个数
+        viewHolder.username.setText(heartShareEntity.getUsername());
+        viewHolder.shareType.setText(heartShareEntity.getContentType());
+        setCommentCount(heartShareEntity.getObjectId(),viewHolder.comment);   //评论个数
+        viewHolder.content.setText(heartShareEntity.getContent());
+        setLikesCount(heartShareEntity.getObjectId(),viewHolder.likes);   //设置点赞个数
 
-        MyL.e("创建Time----"+heartShare.getCreatedAt()+"系统时间--"+ MyUtils.currentTime());
+        MyL.e("创建Time----"+ heartShareEntity.getCreatedAt()+"系统时间--"+ MyUtils.currentTime());
 //        创建Time----2016-12-30 10:46:44系统时间--2016-12-30 10:54:03
-        String createtTime [] = heartShare.getCreatedAt().split(" ");
+        String createtTime [] = heartShareEntity.getCreatedAt().split(" ");
         String currentTime [] = MyUtils.currentTime().split(" ");
 
         //判断创建时间跟当前时间是否同一天，是，只显示时间，不是，显示创建的日期，不显示时间
@@ -115,15 +115,15 @@ public class HeartShareAdapter extends BaseAdapter{
     private void setLikesCount(String objectId, final TextView likes) {
 
         // 查询喜欢这个帖子的所有用户，因此查询的是用户表
-        BmobQuery<Myuser> query = new BmobQuery<Myuser>();
-        HeartShare post = new HeartShare();
+        BmobQuery<UserEntity> query = new BmobQuery<UserEntity>();
+        HeartShareEntity post = new HeartShareEntity();
         post.setObjectId(objectId);
 //likes是Post表中的字段，用来存储所有喜欢该帖子的用户
         query.addWhereRelatedTo("likes", new BmobPointer(post));
-        query.findObjects(new FindListener<Myuser>() {
+        query.findObjects(new FindListener<UserEntity>() {
 
             @Override
-            public void done(List<Myuser> object,BmobException e) {
+            public void done(List<UserEntity> object, BmobException e) {
                 if(e==null){
                     MyL.e("查询个数：" + object.size());
                     likes.setText(object.size()+"");   //设置点赞个数
@@ -145,17 +145,17 @@ public class HeartShareAdapter extends BaseAdapter{
 
 
 
-        BmobQuery<Comment> query = new BmobQuery<Comment>();
+        BmobQuery<CommentEntity> query = new BmobQuery<CommentEntity>();
         //用此方式可以构造一个BmobPointer对象。只需要设置objectId就行
-        HeartShare post = new HeartShare();
+        HeartShareEntity post = new HeartShareEntity();
         post.setObjectId(objectId);   //得到当前动态的Id号，
         query.addWhereEqualTo("heartshare",new BmobPointer(post));
         //希望同时查询该评论的发布者的信息，以及该帖子的作者的信息，这里用到上面`include`的并列对象查询和内嵌对象的查询
         query.include("myuser,heartshare.auther");
-        query.findObjects(new FindListener<Comment>() {
+        query.findObjects(new FindListener<CommentEntity>() {
 
             @Override
-            public void done(List<Comment> objects, BmobException e) {
+            public void done(List<CommentEntity> objects, BmobException e) {
 
                 if(e==null) {
                     countView.setText(objects.size()+"");

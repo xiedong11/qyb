@@ -14,7 +14,7 @@ import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.Volley;
 import com.zhuandian.qxe.R;
-import com.zhuandian.qxe.bean.NewsBean;
+import com.zhuandian.qxe.entity.NewsEntity;
 import com.zhuandian.qxe.utils.GlobalVariable;
 import com.zhuandian.qxe.utils.myUtils.MyImageCache;
 
@@ -31,25 +31,25 @@ import java.util.List;
 public class NewsAdapter extends BaseAdapter {
 
     private final RequestQueue queue;
-    private List<NewsBean> newsBeans;
+    private List<NewsEntity> newsEntities;
     private LayoutInflater mInflater;
 
     //初始化构造方法
-    public NewsAdapter(Context context ,List<NewsBean > datas) {
+    public NewsAdapter(Context context ,List<NewsEntity> datas) {
         mInflater = LayoutInflater.from(context);
-        newsBeans =datas;
+        newsEntities =datas;
         //实例化Volley请求队列
         queue = Volley.newRequestQueue(context);
     }
 
     @Override
     public int getCount() {
-        return newsBeans.size();
+        return newsEntities.size();
     }
 
     @Override
     public Object getItem(int position) {
-        return newsBeans.get(position);
+        return newsEntities.get(position);
     }
 
     @Override
@@ -78,8 +78,8 @@ public class NewsAdapter extends BaseAdapter {
         }
 
         //为item添加内容
-        viewHolder.content.setText(newsBeans.get(position).getTitle()+"");
-        viewHolder.time.setText(newsBeans.get(position).getTime()+"");
+        viewHolder.content.setText(newsEntities.get(position).getTitle()+"");
+        viewHolder.time.setText(newsEntities.get(position).getTime()+"");
 
 
         /*************************放弃新闻图片加载***************************************
@@ -87,10 +87,10 @@ public class NewsAdapter extends BaseAdapter {
          //        http://www.qfnu.edu.cn/index_files/logo.jpg
 
 //        第一步爬取会把标题和链接缓存，上下滑动会根据链接把图片再进行一次缓存，两次的缓存不在一个频道上，上下拖动肯定会有卡顿的，除非网特别好
-//        new MyImgTask(newsBeans.get(position).getContentUrl(),viewHolder.newsImg).execute("");
+//        new MyImgTask(newsEntities.get(position).getContentUrl(),viewHolder.newsImg).execute("");
         ImageLoader imageLoader = new ImageLoader(queue,
                 MyImageCache.getMyImageCache());
-        imageLoader.get(GlobalVariable.JWC_URL+newsBeans.get(position).getImage1URL(), // 图片url
+        imageLoader.get(GlobalVariable.JWC_URL+newsEntities.get(position).getImage1URL(), // 图片url
                 ImageLoader.getImageListener(viewHolder.newsImg,// imageview控件
                         R.drawable.gesture,// 等待下载的图片
                         R.drawable.gesture),// 网络异常的图片
