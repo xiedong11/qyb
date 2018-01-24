@@ -1,5 +1,6 @@
 package com.zhuandian.qxe.base;
 
+import android.databinding.ViewDataBinding;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -13,10 +14,20 @@ import butterknife.ButterKnife;
  * Created by 谢栋 on 2017/5/13.
  */
 
-public abstract class QYBFragment extends Fragment {
-
+public abstract class QYBFragment<VM extends BaseViewModel, B extends ViewDataBinding>  extends Fragment {
+    public QYBActivity activity;
+    public QYBFragment fragment;
     private View rootView;
     private LayoutInflater mInflater;
+    public VM viewModel;
+    public B binding;
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        activity = (QYBActivity) getActivity();
+        fragment = this;
+    }
 
     @Nullable
     @Override
