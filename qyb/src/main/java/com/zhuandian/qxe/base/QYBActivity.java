@@ -2,6 +2,7 @@ package com.zhuandian.qxe.base;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.view.MenuItem;
 import android.view.View;
@@ -20,6 +21,8 @@ public abstract class QYBActivity extends ActionBarActivity implements ActivityP
         super.onCreate(savedInstanceState);
 
         setContent();
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
         ButterKnife.bind(this);
         setupView();
         setModle();
