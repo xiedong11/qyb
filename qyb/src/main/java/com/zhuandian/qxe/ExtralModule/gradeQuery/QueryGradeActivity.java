@@ -18,8 +18,8 @@ public class QueryGradeActivity extends QYBActivity {
     TextView toolbarTitle;
 
     @Override
-    public void setContent() {
-        setContentView(R.layout.activity_query_grade);
+    public int getLayoutId() {
+       return R.layout.activity_query_grade;
     }
 
     @Override
