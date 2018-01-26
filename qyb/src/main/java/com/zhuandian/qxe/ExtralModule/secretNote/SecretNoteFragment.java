@@ -34,7 +34,7 @@ import cn.pedant.SweetAlert.SweetAlertDialog;
 /**
  * Created by 谢栋 on 2016/11/2.
  */
-public class Secret_Note_Fram extends Fragment {
+public class SecretNoteFragment extends Fragment {
 
     private View view;
     private RecyclerView recyclerView;
@@ -47,7 +47,7 @@ public class Secret_Note_Fram extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.secret_note_fram, null);
+        view = inflater.inflate(R.layout.fragment_secret_note, null);
 
         ((TextView) getActivity().findViewById(R.id.toolbar_title)).setText("日记记录");
 
@@ -158,7 +158,7 @@ public class Secret_Note_Fram extends Fragment {
 
                 getFragmentManager()
                         .beginTransaction()
-                        .add(R.id.fram_note, new New_Secret_Note(), "fragment")
+                        .add(R.id.fram_note, new NewSecretNoteFragment(), "fragment")
                         .addToBackStack("fragment")
                         .commit();
 

@@ -119,7 +119,7 @@
             android:name=".ExtralModule.heartshare.HeartShareActivity"
             android:theme="@style/extral_school" />
         <activity
-            android:name=".ExtralModule.secretNote.Secret_note"
+            android:name=".ExtralModule.secretNote.SecretNoteActivity"
             android:theme="@style/extral_school"
             />
         <activity android:name=".MainFrame.MyGame"/>

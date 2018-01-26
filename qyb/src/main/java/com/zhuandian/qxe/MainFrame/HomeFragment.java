@@ -20,7 +20,7 @@ import com.zhuandian.qxe.ExtralModule.StudyCountDown;
 import com.zhuandian.qxe.ExtralModule.TestCalendar;
 import com.zhuandian.qxe.ExtralModule.gradeQuery.QueryGradeActivity;
 import com.zhuandian.qxe.ExtralModule.heartshare.HeartShareActivity;
-import com.zhuandian.qxe.ExtralModule.secretNote.Secret_note;
+import com.zhuandian.qxe.ExtralModule.secretNote.SecretNoteActivity;
 import com.zhuandian.qxe.ExtralModule.wkzxs.WSLActivity;
 import com.zhuandian.qxe.ExtralModule.wkzxs.XLActivity;
 import com.zhuandian.qxe.ExtralModule.wkzxs.ZHLActivity;
@@ -195,7 +195,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                 changeActivity(new WriteTable());
                 break;
             case R.id.secret:
-                changeActivity(new Secret_note());
+                changeActivity(new SecretNoteActivity());
                 break;
             case R.id.heart_share:
                 changeActivity(new HeartShareActivity());

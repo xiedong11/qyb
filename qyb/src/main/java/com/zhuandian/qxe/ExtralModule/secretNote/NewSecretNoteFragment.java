@@ -23,7 +23,7 @@ import cn.pedant.SweetAlert.SweetAlertDialog;
 /**
  * Created by 谢栋 on 2016/11/3.
  */
-public class New_Secret_Note extends Fragment {
+public class NewSecretNoteFragment extends Fragment {
     private View view;
     private EditText content;
     private Button commit;
@@ -34,7 +34,7 @@ public class New_Secret_Note extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        view  = inflater.inflate(R.layout.new_srcret_note,null);
+        view  = inflater.inflate(R.layout.fragment_new_srcret_note,null);
         ((TextView)getActivity().findViewById(R.id.toolbar_title)).setText("新建笔记");
 
         //初始化DbUtils框架
