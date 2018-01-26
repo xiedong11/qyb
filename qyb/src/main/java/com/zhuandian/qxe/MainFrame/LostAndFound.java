@@ -34,8 +34,8 @@ public class LostAndFound extends QYBActivity {
     private String username;
 
     @Override
-    public void setContent() {
-        setContentView(R.layout.activity_lost_and_found);
+    public int getLayoutId() {
+        return R.layout.activity_lost_and_found;
     }
 
     @Override

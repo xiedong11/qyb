@@ -1,6 +1,8 @@
 package com.zhuandian.qxe.base;
 
 import android.app.Activity;
+import android.databinding.DataBindingUtil;
+import android.databinding.ViewDataBinding;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentActivity;
@@ -10,6 +12,8 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.umeng.analytics.MobclickAgent;
+import com.zhuandian.qxe.utils.AppManager;
+import com.zhuandian.qxe.utils.TUtil;
 
 import butterknife.ButterKnife;
 
@@ -17,33 +21,45 @@ import butterknife.ButterKnife;
  * Created by 谢栋 on 2017/5/13.
  */
 
-public abstract class QYBActivity extends FragmentActivity implements ActivityPageSetting, View.OnClickListener {
+public abstract class QYBActivity<VM extends BaseViewModel, B extends ViewDataBinding> extends FragmentActivity implements ActivityPageSetting, View.OnClickListener {
+    public VM viewModel;
+    public B binding;
+    public QYBActivity activity;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        setContent();
+        setContentView(getLayoutId());
+        AppManager.getInstance().addActivity(this);
         ButterKnife.bind(this);
+        initData();
         setupView();
         setModle();
     }
 
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
+    public void initData() {
+        activity = this;
+        initMvvm();
+    }
 
-        //监听左上角的返回箭头
-        if (item.getItemId() == android.R.id.home) {
-            finish();
-            return true;
+    private void initMvvm() {
+        if (TUtil.hasParameterizedTye(this)) {
+            binding = DataBindingUtil.setContentView(this, getLayoutId());
+            viewModel = TUtil.getT(this, 0);
+            viewModel.setContext(activity, binding);
         }
-        return super.onOptionsItemSelected(item);
-
     }
 
     @Override
     public void onClick(View v) {
 
+    }
+
+    @Override
+    protected void onDestroy() {
+        AppManager.getInstance().removeActivity(this);
+        super.onDestroy();
     }
 
     //    友盟统计相关

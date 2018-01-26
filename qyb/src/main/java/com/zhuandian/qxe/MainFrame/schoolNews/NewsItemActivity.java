@@ -53,8 +53,8 @@ public class NewsItemActivity extends QYBActivity {
 
 
     @Override
-    public void setContent() {
-        setContentView(R.layout.news_activity);
+    public int getLayoutId() {
+        return R.layout.news_activity;
     }
 
     @Override
