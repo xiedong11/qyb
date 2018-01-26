@@ -197,7 +197,7 @@ ADDED from AndroidManifest.xml:102:9
 		ADDED from AndroidManifest.xml:104:13
 	android:name
 		ADDED from AndroidManifest.xml:103:13
-activity#com.zhuandian.qxe.ExtralModule.secretNote.Secret_note
+activity#com.zhuandian.qxe.ExtralModule.secretNote.SecretNoteActivity
 ADDED from AndroidManifest.xml:105:9
 	android:theme
 		ADDED from AndroidManifest.xml:107:13

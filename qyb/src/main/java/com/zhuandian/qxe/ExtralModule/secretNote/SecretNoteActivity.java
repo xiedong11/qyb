@@ -23,7 +23,7 @@ import cn.pedant.SweetAlert.SweetAlertDialog;
 /**
  * Created by 谢栋 on 2016/10/31.
  */
-public class Secret_note extends Activity implements View.OnClickListener {
+public class SecretNoteActivity extends Activity implements View.OnClickListener {
 
     private EditText passwordEditText;
     private DbUtils dbUtils;
@@ -32,7 +32,7 @@ public class Secret_note extends Activity implements View.OnClickListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.secret_note);
+        setContentView(R.layout.activity_secret_note);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         ((TextView)findViewById(R.id.toolbar_title)).setText("私密笔记");
@@ -48,7 +48,7 @@ public class Secret_note extends Activity implements View.OnClickListener {
 
 
 
-        toolbar.setNavigationIcon(R.drawable.ic_found_course_icon);
+        toolbar.setNavigationIcon(R.drawable.md_nav_icon);
         //设置左上角导航键的点击监听事件
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
@@ -69,7 +69,7 @@ public class Secret_note extends Activity implements View.OnClickListener {
                         //删除所有数据记录
                         try {
                             dbUtils.delete(SercetNoteEntity.class, WhereBuilder.b());
-                            new SweetAlertDialog(Secret_note.this,SweetAlertDialog.SUCCESS_TYPE)
+                            new SweetAlertDialog(SecretNoteActivity.this,SweetAlertDialog.SUCCESS_TYPE)
                                     .setTitleText("清除成功")
                                     .setContentText("已成功清除所有私密记录！")
                                     .show();
@@ -79,7 +79,7 @@ public class Secret_note extends Activity implements View.OnClickListener {
                         }
                         break;
                     case R.id.make :
-                        new SweetAlertDialog(Secret_note.this,SweetAlertDialog.ERROR_TYPE)
+                        new SweetAlertDialog(SecretNoteActivity.this,SweetAlertDialog.ERROR_TYPE)
                                 .setTitleText("无权提交")
                                 .setContentText("请升级为VIP用户获得更多权限")
                                 .show();
@@ -166,7 +166,7 @@ public class Secret_note extends Activity implements View.OnClickListener {
 
             getFragmentManager()
                     .beginTransaction()
-                    .replace(R.id.fram_note, new Secret_Note_Fram(), "fragment")
+                    .replace(R.id.fram_note, new SecretNoteFragment(), "fragment")
                     .addToBackStack("fragment")
                     .commit();
 
