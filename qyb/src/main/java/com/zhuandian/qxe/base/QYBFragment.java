@@ -84,7 +84,7 @@ public abstract class QYBFragment<VM extends BaseViewModel, B extends ViewDataBi
 
     protected abstract int getLayoutId();
 
-    protected abstract void setModle();
+    protected  void setModle(){};
 }
 
 

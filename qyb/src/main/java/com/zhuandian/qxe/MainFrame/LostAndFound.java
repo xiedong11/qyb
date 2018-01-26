@@ -1,10 +1,11 @@
 package com.zhuandian.qxe.MainFrame;
 
 import android.graphics.Color;
+import android.os.Bundle;
 import android.support.design.widget.Snackbar;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.zhuandian.qxe.R;
@@ -13,6 +14,9 @@ import com.zhuandian.qxe.entity.LostAndFoundEntity;
 import com.zhuandian.qxe.service.QYBApplication;
 import com.zhuandian.qxe.utils.myUtils.MyL;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.SaveListener;
 import cn.pedant.SweetAlert.SweetAlertDialog;
@@ -23,42 +27,29 @@ import cn.pedant.SweetAlert.SweetAlertDialog;
  */
 public class LostAndFound extends QYBActivity {
 
-
+    @BindView(R.id.toolbar_title)
+    TextView toolbarTitle;
     private EditText broadContent;
     private SweetAlertDialog pDialog;
     private String username;
 
-
     @Override
     public void setContent() {
-        setContentView(R.layout.lost_and_found);
+        setContentView(R.layout.activity_lost_and_found);
     }
 
     @Override
     public void setupView() {
-
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        ((TextView) findViewById(R.id.toolbar_title)).setText("发布广播");
+        toolbarTitle.setText("发布广播");
         broadContent = (EditText) findViewById(R.id.broadcast_content);
         //得到用户名
         QYBApplication application = (QYBApplication) this.getApplication();
         username = application.getUsername(this);
-
-        //设置支持Toolbar
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setHomeButtonEnabled(true);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
         //定义对话框
         pDialog = new SweetAlertDialog(this, SweetAlertDialog.PROGRESS_TYPE);
         pDialog.getProgressHelper().setBarColor(Color.parseColor("#A5DC86"));
         pDialog.setTitleText("提交中...");
         pDialog.setCancelable(false);
-
-
-        //设置发布广播的监听事件
-        ((TextView) findViewById(R.id.submit_broadcast)).setOnClickListener(this);
-
     }
 
     @Override
@@ -67,11 +58,22 @@ public class LostAndFound extends QYBActivity {
     }
 
 
+    @OnClick({R.id.iv_back, R.id.submit_broadcast})
+    public void onViewClicked(View view) {
+        switch (view.getId()) {
+            case R.id.iv_back:
+                finish();
+                break;
+            case R.id.submit_broadcast:
+                submitBroadcast();
+                break;
+        }
+    }
 
-
-
-    @Override
-    public void onClick(View v) {
+    /**
+     * 提交广播事物
+     */
+    public void submitBroadcast() {
         final String broadStr = broadContent.getText().toString();   //得到输入框中的内容
         if (!"".equals(broadStr)) {
             //执行后台存储操作
@@ -97,4 +99,5 @@ public class LostAndFound extends QYBActivity {
         }
 
     }
+
 }
