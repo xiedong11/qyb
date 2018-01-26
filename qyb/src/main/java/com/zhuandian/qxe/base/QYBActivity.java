@@ -1,7 +1,9 @@
 package com.zhuandian.qxe.base;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.view.MenuItem;
@@ -15,14 +17,12 @@ import butterknife.ButterKnife;
  * Created by 谢栋 on 2017/5/13.
  */
 
-public abstract class QYBActivity extends ActionBarActivity implements ActivityPageSetting, View.OnClickListener {
+public abstract class QYBActivity extends FragmentActivity implements ActivityPageSetting, View.OnClickListener {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContent();
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.hide();
         ButterKnife.bind(this);
         setupView();
         setModle();

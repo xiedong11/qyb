@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:background="#fff"
     android:orientation="vertical">
-    <include layout="@layout/query_toolbar"/>
+    <include layout="@layout/common_titlebar"/>
 
     <LinearLayout
         android:layout_width="match_parent"
