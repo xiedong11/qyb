@@ -23,6 +23,7 @@ public class WSLActivity extends QYBActivity {
     ImageView ivBack;
 
 
+
     @Override
     public int getLayoutId() {
         return R.layout.wsl_wklist;
