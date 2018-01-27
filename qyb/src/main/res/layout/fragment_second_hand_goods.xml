@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="com.zhuandian.qxe.base.binding.MvvmCommonAdapter" />
+
+        <variable
+            name="viewModel"
+            type="com.zhuandian.qxe.MainFrame.esGoods.SecondHandGoodsViewModel" />
+    </data>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -9,14 +19,18 @@
         <android.support.v4.widget.SwipeRefreshLayout
             android:id="@+id/swipe_refresh"
             android:layout_width="match_parent"
-            android:visibility="visible"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:visibility="visible">
 
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/rv_goods_list"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:padding="2dp" />
+            <!--app:listener="@{viewModel.clickListener}"-->
+            <!--app:adapter="@{viewModel.adapter}"-->
+            <!--app:data="@{viewModel.mDatas}"-->
+
         </android.support.v4.widget.SwipeRefreshLayout>
     </LinearLayout>
 </layout>
