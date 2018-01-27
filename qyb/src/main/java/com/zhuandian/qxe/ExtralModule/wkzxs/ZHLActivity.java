@@ -26,10 +26,9 @@ public class ZHLActivity extends QYBActivity {
     @BindView(R.id.iv_back)
     ImageView ivBack;
 
-
     @Override
-    public void setContent() {
-        setContentView(R.layout.zhl_wklist);
+    public int getLayoutId() {
+        return R.layout.zhl_wklist;
     }
 
     @Override

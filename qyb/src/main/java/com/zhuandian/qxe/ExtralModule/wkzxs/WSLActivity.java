@@ -24,8 +24,8 @@ public class WSLActivity extends QYBActivity {
 
 
     @Override
-    public void setContent() {
-        setContentView(R.layout.wsl_wklist);
+    public int getLayoutId() {
+        return R.layout.wsl_wklist;
     }
 
     @Override

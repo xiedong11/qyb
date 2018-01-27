@@ -20,8 +20,8 @@ public class XLActivity extends QYBActivity {
     TextView toolbarTitle;
 
     @Override
-    public void setContent() {
-        setContentView(R.layout.xl_wklist);
+    public int getLayoutId() {
+        return R.layout.xl_wklist;
     }
 
     @Override
