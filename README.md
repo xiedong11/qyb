@@ -1,6 +1,6 @@
 ##曲园帮##
 
-<!-- ![Sample Screenshot](https://github.com/xiedong11/PaySuccessView/blob/master/picture/GIF.gif) -->
+ ![Sample Screenshot](https://github.com/xiedong11/qyb/blob/master/picture/ScreenGif.gif)
 
 ----------
 ###分支日志：###
