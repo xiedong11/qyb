@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include layout="@layout/toolbar" />
+
+        <!--<FrameLayout-->
+        <!--android:layout_width="fill_parent"-->
+        <!--android:layout_height="50dp"-->
+        <!--android:background="#4CAF50"-->
+        <!-->-->
+        <!--<TextView-->
+        <!--android:padding="7dp"-->
+        <!--android:layout_width="fill_parent"-->
+        <!--android:layout_height="fill_parent"-->
+        <!--android:text="曲园快讯"-->
+        <!--android:textSize="18sp"-->
+        <!--style="@style/textSytle"-->
+        <!--android:gravity="center"-->
+        <!--/>-->
+        <!--</FrameLayout>-->
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="7dp"
+                android:text=""
+                android:textSize="18sp" />
+
+            <LinearLayout
+                android:id="@+id/myimage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:paddingTop="10dp">
+
+
+                <ImageView
+                    android:id="@+id/image1"
+                    android:layout_width="150dp"
+                    android:layout_height="200dp"
+                    android:paddingRight="5dp"
+                    android:src="@drawable/jwc_news_logo" />
+
+                <ImageView
+                    android:id="@+id/image2"
+                    android:layout_width="150dp"
+                    android:layout_height="200dp"
+                    android:layout_toRightOf="@+id/image1"
+                    android:paddingLeft="5dp"
+                    android:src="@drawable/jwc_news_logo" />
+            </LinearLayout>
+
+            <ScrollView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/myimage"
+                android:layout_centerInParent="true">
+
+                <TextView
+                    android:id="@+id/content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="20dp"
+                    android:text="oh no~~ ，新闻内容没找到" />
+            </ScrollView>
+        </RelativeLayout>
+    </LinearLayout>
+</layout>
