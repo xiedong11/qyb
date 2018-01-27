@@ -5,7 +5,7 @@ package com.zhuandian.qxe.base;
  */
 
 public interface ActivityPageSetting {
-    void setContent();
+    int getLayoutId();
     void setupView();
     void setModle();
 }
