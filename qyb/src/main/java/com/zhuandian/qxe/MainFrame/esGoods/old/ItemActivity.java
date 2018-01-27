@@ -56,10 +56,6 @@ public class ItemActivity extends ActionBarActivity {
     private ImageView imageDesc;   //图片放大详情
     private String imageURL;      //图片地址
 
-
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

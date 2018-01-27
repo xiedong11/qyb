@@ -14,6 +14,7 @@ public class SecondHandGoodsFragment extends QYBFragment<SecondHandGoodsViewMode
     @Override
     protected void setupView() {
        viewModel.initView();
+       binding.setViewModel(viewModel);
     }
 
     @Override

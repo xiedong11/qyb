@@ -20,6 +20,7 @@ public class MvvmCommonAdapter extends RecyclerView.Adapter<MvvmCommonAdapter.Co
     protected LayoutInflater mInflater;
     // mvvm绑定的viewModel引用
     private int mVariableId;
+    private OnItemClickListener clickListener;
 
     //构造方法
     public MvvmCommonAdapter(List datas, int variableId, Context context, int layoutId) {
@@ -31,11 +32,11 @@ public class MvvmCommonAdapter extends RecyclerView.Adapter<MvvmCommonAdapter.Co
     }
 
 
-    public List getmDatas() {
+    public List getDatas() {
         return mDatas;
     }
 
-    public void setmDatas(List mDatas) {
+    public void setDatas(List mDatas) {
         this.mDatas = mDatas;
     }
 
@@ -48,9 +49,17 @@ public class MvvmCommonAdapter extends RecyclerView.Adapter<MvvmCommonAdapter.Co
     }
 
     @Override
-    public void onBindViewHolder(CommonHolder holder, int position) {
+    public void onBindViewHolder(CommonHolder holder, final int position) {
         holder.binding.setVariable(mVariableId, mDatas.get(position));
         holder.binding.executePendingBindings();
+        holder.binding.getRoot().setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (clickListener != null) {
+                    clickListener.onItemClick(view, position);
+                }
+            }
+        });
     }
 
 
@@ -59,6 +68,13 @@ public class MvvmCommonAdapter extends RecyclerView.Adapter<MvvmCommonAdapter.Co
         return null == mDatas ? 0 : mDatas.size();
     }
 
+    public void setClickListener(OnItemClickListener clickListener) {
+        this.clickListener = clickListener;
+    }
+
+    public interface OnItemClickListener {
+        void onItemClick(View view, int position);
+    }
 
     class CommonHolder extends RecyclerView.ViewHolder {
         private ViewDataBinding binding;
