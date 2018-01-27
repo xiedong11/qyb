@@ -73,7 +73,7 @@
             android:name=".MenuActivity"
             android:label="@string/app_name" >
         </activity>
-        <activity android:name=".GuideView.StartFirst" >
+        <activity android:name=".GuideView.SpalshActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

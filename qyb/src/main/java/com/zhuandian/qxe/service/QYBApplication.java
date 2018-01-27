@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.util.Log;
 
+import com.zhuandian.qxe.R;
 import com.zhuandian.qxe.chat.CustomUserProvider;
 
 import cn.bmob.push.BmobPush;
@@ -42,19 +43,18 @@ public class QYBApplication extends Application {
         LCChatKit.getInstance().init(getApplicationContext(), APP_ID, APP_KEY);
 
         //初始化Bmob的SDK
-        Bmob.initialize(this, "df25a6c6a79479d11a60f2e89c68b467");
-
+        Bmob.initialize(this, getString(R.string.bmobkey));
+        //初始化后台统计功能
+        cn.bmob.statistics.AppStat.i(getString(R.string.bmobkey), null);
         // 使用推送服务时的初始化操作
         BmobInstallation.getCurrentInstallation().save();
         // 启动推送服务
         BmobPush.startWork(this);
-
         //在线更新初始化
 //        BmobUpdateAgent.initAppVersion();
         BmobUpdateAgent.update(this);
         BmobUpdateAgent.setUpdateOnlyWifi(false);
         BmobUpdateAgent.setUpdateListener(new BmobUpdateListener() {
-
             @Override
             public void onUpdateReturned(int updateStatus, UpdateResponse updateInfo) {
                 // TODO Auto-generated method stub
@@ -63,7 +63,6 @@ public class QYBApplication extends Application {
             }
         });
     }
-
 
     //获取在注册界面得到的sharedpreferences对象存放的内容
     public static String getUsername(Context context) {

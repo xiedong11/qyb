@@ -36,9 +36,7 @@ public class NewsItemActivity extends QYBActivity {
 
     private NewsEntity newsEntity;
     private List<NewsEntity> newsEntities;
-
     private RequestQueue queue;
-
     @BindView(R.id.title)
     TextView title;
     @BindView(R.id.content)
@@ -47,22 +45,18 @@ public class NewsItemActivity extends QYBActivity {
     ImageView imageview1;
     @BindView(R.id.image2)
     ImageView imageview2;
-
-
     private String newsTitle = "";    //接收从newsfragment传递过来的新闻标题
-
 
     @Override
     public int getLayoutId() {
-        return R.layout.news_activity;
+        return R.layout.activity_news_item;
     }
 
     @Override
     public void setupView() {
-
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         ((TextView) findViewById(R.id.toolbar_title)).setText("曲园快讯");
-        toolbar.setNavigationIcon(R.drawable.ic_found_course_icon);  //设置向上的返回箭头
+        toolbar.setNavigationIcon(R.drawable.md_nav_icon);  //设置向上的返回箭头
         //箭头的点击监听事件
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
@@ -92,18 +86,14 @@ public class NewsItemActivity extends QYBActivity {
 
         @Override
         protected NewsEntity doInBackground(String... params) {
-
             Document doc;
             String image2 = "";
             String image1 = "";
             Log.i("xie111", params[0]);
             try {
                 doc = Jsoup.connect(params[0]).get();
-
-                Elements listClass = doc.getElementsByAttributeValue("class", "zw_content");
+                Elements listClass = doc.getElementsByAttributeValue("class", "content");
                 for (Element listUrl : listClass) {
-
-
                     try {
                         image1 = listUrl.getElementsByTag("img").get(0).attr("src");
                     } catch (Exception e) {
@@ -111,8 +101,6 @@ public class NewsItemActivity extends QYBActivity {
                     } finally {
                         loadIamge(GlobalVariable.JWC_URL + image1, imageview1);
                     }
-
-
                     //防止新闻内容中没有第二个图片链接，做try-catch处理
                     try {
                         image2 = listUrl.getElementsByTag("img").get(1).attr("src");
@@ -122,13 +110,8 @@ public class NewsItemActivity extends QYBActivity {
                         loadIamge(GlobalVariable.JWC_URL + image2, imageview2);
                     }
                     String text = listUrl.getElementsByTag("span").text();
-
                     Log.i("xiedong", image1 + text);
                     newsEntity.setItemContent(text);
-
-//                    content.setText(text);
-
-
                 }
 
             } catch (IOException e) {
@@ -146,10 +129,8 @@ public class NewsItemActivity extends QYBActivity {
         }
     }
 
-
     //使用Volley加载图片
     private void loadIamge(String s, final ImageView imageView) {
-
         ImageRequest request = new ImageRequest(s,
                 new Response.Listener<Bitmap>() {
                     @Override
@@ -164,7 +145,6 @@ public class NewsItemActivity extends QYBActivity {
                     }
                 }
         );
-
         //千万要把请求添加到请求队列，否则请求不会生效
         queue.add(request);
 

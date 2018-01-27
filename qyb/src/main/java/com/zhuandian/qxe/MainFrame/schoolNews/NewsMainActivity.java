@@ -26,27 +26,20 @@ import butterknife.BindView;
  * Created by 谢栋 on 2017/1/31.
  */
 public class NewsMainActivity extends QYBFragment {
-
-
     @BindView(R.id.viewpager)
     ViewPager viewPager;
     @BindView(R.id.sliding_tabs)
     TabLayout tabLayout;
     private List<Fragment> fragmentList = new ArrayList<>();
-
     @Override
     protected void setupView() {
         ((TextView) getActivity().findViewById(R.id.navigation_text)).setText("曲园快讯");
-
         //添加新闻资讯页
         fragmentList.add(CommonNewsFragment.getInstance("XXYW", "http://www.qfnu.edu.cn/xxyw.htm"));
         fragmentList.add(CommonNewsFragment.getInstance("XYCZ", "http://www.qfnu.edu.cn/xxyw.htm"));
         fragmentList.add(CommonNewsFragment.getInstance("TZGG", "http://www.qfnu.edu.cn/tzgg.htm"));
         fragmentList.add(CommonNewsFragment.getInstance("MTGZ", "http://www.qfnu.edu.cn/xxyw.htm"));
-
         viewPager.setAdapter(new NewsViewPagerAdapter(getActivity().getSupportFragmentManager(), fragmentList));
-
-
         tabLayout.post(new Runnable() {   //开线程解决TabLayout加载时的一小段延时，导致页面标题不同步
             @Override
             public void run() {
@@ -65,6 +58,5 @@ public class NewsMainActivity extends QYBFragment {
     protected void setModle() {
 
     }
-
 
 }

@@ -1,6 +1,5 @@
 package com.zhuandian.qxe.GuideView;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -11,71 +10,67 @@ import android.widget.TextView;
 
 import com.zhuandian.qxe.MenuActivity;
 import com.zhuandian.qxe.R;
+import com.zhuandian.qxe.base.QYBActivity;
 import com.zhuandian.qxe.service.LoginActivity;
 import com.zhuandian.qxe.utils.myUtils.MyUtils;
 
-import cn.bmob.v3.Bmob;
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import cn.bmob.v3.BmobUser;
 
 /**
  * 软件第一次启动时启动该类
  * Created by 谢栋 on 2016/8/30.
  */
-public class StartFirst extends Activity {
+public class SpalshActivity extends QYBActivity {
     private static int DELAY = 2000;
+    @BindView(R.id.version)
+    TextView version;
     private BmobUser bmobUser;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.splash);
-        //初始化Bmob的SDK
-        Bmob.initialize(this, getString(R.string.bmobkey));
+    public int getLayoutId() {
+        return R.layout.activity_splash;
+    }
 
-        //初始化后台统计功能
-        cn.bmob.statistics.AppStat.i(getString(R.string.bmobkey), null);
-
-        //设置版本号
-        ((TextView) findViewById(R.id.version)).setText(MyUtils.getVersionName(this));
-        //去除状态栏
+    @Override
+    public void setupView() {
+        version.setText(MyUtils.getVersionName(this));
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
+    }
 
-
+    @Override
+    public void setModle() {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
                 Intent intent;
-
                 //把当前安装包的VersionCode写入用户配置文件
                 SharedPreferences sp = getSharedPreferences("userInfo", MODE_PRIVATE);
-
-                if (sp.getInt("versionCode", 0) < MyUtils.getVersionCode(StartFirst.this)) {
-
+                if (sp.getInt("versionCode", 0) < MyUtils.getVersionCode(SpalshActivity.this)) {
                     SharedPreferences.Editor editor = sp.edit();
-                    editor.putInt("versionCode", MyUtils.getVersionCode(StartFirst.this));
+                    editor.putInt("versionCode", MyUtils.getVersionCode(SpalshActivity.this));
                     editor.commit();
-
-                    startActivity(new Intent(StartFirst.this, GuideView.class));
-                    StartFirst.this.finish();
-
+                    startActivity(new Intent(SpalshActivity.this, GuideView.class));
+                    SpalshActivity.this.finish();
                 } else {
-
                     //判断是否存在当前用户
                     bmobUser = BmobUser.getCurrentUser();
                     if (bmobUser != null) {
                         Log.i("xie", "有用户缓存记录");
-                        intent = new Intent(StartFirst.this, MenuActivity.class);
+                        intent = new Intent(SpalshActivity.this, MenuActivity.class);
                     } else {
                         Log.i("xie", "没有用户登录缓存记录");
-                        intent = new Intent(StartFirst.this, LoginActivity.class);
+                        intent = new Intent(SpalshActivity.this, LoginActivity.class);
                     }
                     startActivity(intent);
-                    StartFirst.this.finish();
+                    SpalshActivity.this.finish();
                 }
             }
         }, DELAY);
 
-
     }
+
+
 }
