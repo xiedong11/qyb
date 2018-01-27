@@ -1,6 +1,6 @@
 ##曲园帮##
 
-
+<!-- ![Sample Screenshot](https://github.com/xiedong11/PaySuccessView/blob/master/picture/GIF.gif) -->
 
 ----------
 ###分支日志：###
@@ -65,7 +65,7 @@
 曲园帮项目出发点为服务于曲阜师范大学在校学生学习生活的一款社区服务类app，集成 无课自习室查询，曲园淘宝，相约跑步，心语互享等特色功能...
 
 
-**嗯嗯嗯。。。   MarkDown就写到这里，再见~**
+**MarkDown就写到这里，再见~**
 
 
 
