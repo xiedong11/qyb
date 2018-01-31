@@ -40,7 +40,6 @@ public class MenuActivity extends QYBActivity implements View.OnClickListener {
     private ResideMenu resideMenu;
     private MenuActivity mContext;
 
-
     //左右主Fragrant选项卡菜单
     private ResideMenuItem itemHome;
     private ResideMenuItem itemESGoods;
@@ -107,15 +106,25 @@ public class MenuActivity extends QYBActivity implements View.OnClickListener {
         findViewById(R.id.title_bar_right_menu).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                initSocialShare();
+            }
+        });
 
-                new ShareAction(MenuActivity.this)
-                        .withText(getString(R.string.Share_app_url))
-                        .withMedia(new UMImage(MenuActivity.this, R.drawable.ic_launcher))
-                        .setDisplayList(SHARE_MEDIA.SINA, SHARE_MEDIA.QQ, SHARE_MEDIA.WEIXIN, SHARE_MEDIA.ALIPAY)
-                        .setCallback(shareListener)
-                        .open();
 
-                //启用系统分享
+    }
+
+    /**
+     * 初始化分享功能
+     */
+    private void initSocialShare() {
+        new ShareAction(MenuActivity.this)
+                .withText(getString(R.string.Share_app_url))
+                .withMedia(new UMImage(MenuActivity.this, R.drawable.ic_launcher))
+                .setDisplayList(SHARE_MEDIA.SINA, SHARE_MEDIA.QQ, SHARE_MEDIA.WEIXIN, SHARE_MEDIA.ALIPAY)
+                .setCallback(shareListener)
+                .open();
+
+        //启用系统分享
 //                resideMenu.openMenu(ResideMenu.DIRECTION_RIGHT);
 //                Intent shareIntent = new Intent();
 //                shareIntent.setAction(Intent.ACTION_SEND);
@@ -124,10 +133,6 @@ public class MenuActivity extends QYBActivity implements View.OnClickListener {
 //
 //                //设置分享列表的标题，并且每次都显示分享列表
 //                startActivity(Intent.createChooser(shareIntent, "分享到"));
-            }
-        });
-
-
     }
 
     private UMShareListener shareListener = new UMShareListener() {
@@ -146,7 +151,7 @@ public class MenuActivity extends QYBActivity implements View.OnClickListener {
          */
         @Override
         public void onResult(SHARE_MEDIA platform) {
-            Toast.makeText(MenuActivity.this,"成功了",Toast.LENGTH_LONG).show();
+            Toast.makeText(MenuActivity.this, "分享成功", Toast.LENGTH_LONG).show();
         }
 
         /**
@@ -156,7 +161,7 @@ public class MenuActivity extends QYBActivity implements View.OnClickListener {
          */
         @Override
         public void onError(SHARE_MEDIA platform, Throwable t) {
-            Toast.makeText(MenuActivity.this,"失败"+t.getMessage(),Toast.LENGTH_LONG).show();
+            Toast.makeText(MenuActivity.this, "分享失败", Toast.LENGTH_LONG).show();
         }
 
         /**
@@ -165,7 +170,7 @@ public class MenuActivity extends QYBActivity implements View.OnClickListener {
          */
         @Override
         public void onCancel(SHARE_MEDIA platform) {
-            Toast.makeText(MenuActivity.this,"取消了",Toast.LENGTH_LONG).show();
+            Toast.makeText(MenuActivity.this, "分享取消", Toast.LENGTH_LONG).show();
 
         }
     };
