@@ -5,6 +5,8 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.util.Log;
 
+import com.umeng.socialize.PlatformConfig;
+import com.umeng.socialize.UMShareAPI;
 import com.zhuandian.qxe.R;
 import com.zhuandian.qxe.chat.CustomUserProvider;
 
@@ -57,11 +59,16 @@ public class QYBApplication extends Application {
         BmobUpdateAgent.setUpdateListener(new BmobUpdateListener() {
             @Override
             public void onUpdateReturned(int updateStatus, UpdateResponse updateInfo) {
-                // TODO Auto-generated method stub
                 //根据updateStatus来判断更新是否成功
                 Log.i("xiedong", updateStatus + "状态码");
             }
         });
+
+        UMShareAPI.get(this);
+        //TODO appID非正式
+        PlatformConfig.setWeixin("wx967daebe835fbeac", "5bb696d9ccd75a38c8a0bfe0675559b3");
+        PlatformConfig.setQQZone("100424468", "c7394704798a158208a74ab60104f0ba");
+        PlatformConfig.setSinaWeibo("3921700954", "04b48b094faeb16683c32669824ebdad", "https://weibo.com/xieluoxixi");
     }
 
     //获取在注册界面得到的sharedpreferences对象存放的内容

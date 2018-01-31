@@ -1,6 +1,7 @@
 package com.zhuandian.qxe.base;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.databinding.ViewDataBinding;
 import android.os.Bundle;
@@ -12,6 +13,7 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.umeng.analytics.MobclickAgent;
+import com.umeng.socialize.UMShareAPI;
 import com.zhuandian.qxe.utils.AppManager;
 import com.zhuandian.qxe.utils.TUtil;
 
@@ -73,5 +75,17 @@ public abstract class QYBActivity<VM extends BaseViewModel, B extends ViewDataBi
     public void onPause() {
         super.onPause();
         MobclickAgent.onPause(this);
+    }
+
+    /**
+     * umeng分享回调
+     * @param requestCode
+     * @param resultCode
+     * @param data
+     */
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        UMShareAPI.get(this).onActivityResult(requestCode, resultCode, data);
     }
 }
