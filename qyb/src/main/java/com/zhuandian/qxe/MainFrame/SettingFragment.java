@@ -37,7 +37,7 @@ public class SettingFragment extends Fragment implements View.OnClickListener, V
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.setting_1,null);
+        view = inflater.inflate(R.layout.fragment_setting,null);
         ( (TextView)  getActivity().findViewById(R.id.navigation_text)).setText("软件设置");
         //初始化Bmob的SDK
         Bmob.initialize(getActivity(), getString(R.string.bmobkey));
