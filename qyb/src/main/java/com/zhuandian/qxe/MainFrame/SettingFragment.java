@@ -20,6 +20,7 @@ import android.widget.TextView;
 import com.zhuandian.qxe.R;
 import com.zhuandian.qxe.service.LoginActivity;
 import com.zhuandian.qxe.utils.MyView.HorizontalItem;
+import com.zhuandian.qxe.utils.MyView.TvRightOnclick;
 import com.zhuandian.qxe.utils.myUtils.MyUtils;
 
 import cn.bmob.v3.Bmob;
@@ -37,6 +38,8 @@ public class SettingFragment extends Fragment implements View.OnClickListener, V
 
     //小龙测试使用
     private HorizontalItem horizontalItem;
+
+    TvRightOnclick tvRightOnclick ;
 
     @Nullable
     @Override
@@ -66,7 +69,9 @@ public class SettingFragment extends Fragment implements View.OnClickListener, V
 
         horizontalItem = (HorizontalItem) view.findViewById(R.id.horitem);
 
-        horizontalItem.setOnClickListener(this);
+       horizontalItem.setOnClickListener(this);
+
+
 
 //        view.findViewById(R.id.cancel_click).setOnClickListener(this);   //给设置的父控件设计点击事件，用户隐藏软键盘
         username = ((EditText) view.findViewById(R.id.user_name));
@@ -92,9 +97,9 @@ public class SettingFragment extends Fragment implements View.OnClickListener, V
     @Override
     public void onClick(View v) {
         switch (v.getId()){
-            case R.id.horitem:
-                Log.i("sbl","在fragment中处理的");
-                break;
+//            case R.id.horitem:
+//                Log.i("sbl","在fragment中处理的");
+//                break;
 
             case R.id.logout :
                 BmobUser.logOut();   //清除缓存用户对象
@@ -251,6 +256,7 @@ public class SettingFragment extends Fragment implements View.OnClickListener, V
     });
         edittext.setText(sPreferences.getString(keyValue, ""));
     }
+
 
 
 }

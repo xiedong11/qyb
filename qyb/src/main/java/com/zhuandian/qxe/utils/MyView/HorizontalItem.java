@@ -24,6 +24,7 @@ public class HorizontalItem extends RelativeLayout implements View.OnClickListen
     private TextView tvLeft;
     private TextView tvRight;
     private ImageView ivRight;
+    TvRightOnclick tvRightOnclick;//接口
 
 //    public HorizontalItem(Context context) {
 //        super(context);
@@ -34,7 +35,6 @@ public class HorizontalItem extends RelativeLayout implements View.OnClickListen
         // 将自定义组合控件的布局渲染成View
         View view = View.inflate(context, R.layout.horizontal_item, this);
     //  LayoutInflater.from(context).inflate(R.layout.horizontal_item,this,true);
-        Log.i("sbl","======");
         tvLeft = (TextView) view.findViewById(R.id.tv_left);
         tvRight = (TextView) view.findViewById(R.id.tv_right);
         ivRight = (ImageView) findViewById(R.id.iv_right);
@@ -50,16 +50,18 @@ public class HorizontalItem extends RelativeLayout implements View.OnClickListen
         TypedArray typedArray = context.obtainStyledAttributes(attrs,R.styleable.HorizontalItem);
         String leftText = typedArray.getString(R.styleable.HorizontalItem_tv_left);
         tvLeft.setText(leftText);
+        tvLeft.setOnClickListener(this);
 
 
         //右边TextView
         String rightText = typedArray.getString(R.styleable.HorizontalItem_tv_right);
         tvRight.setText(rightText);
+        tvRight.setOnClickListener(this);
 
         //右边图片ImageView
-        int rightImageView = typedArray.getResourceId(R.styleable.HorizontalItem_iv_right, -1);
+        int rightImageView = typedArray.getResourceId(R.styleable.HorizontalItem_iv_right, R.drawable.add);
         ivRight.setBackgroundResource(rightImageView);
-
+        ivRight.setOnClickListener(this);
 
         typedArray.recycle();
     }
@@ -72,7 +74,24 @@ public class HorizontalItem extends RelativeLayout implements View.OnClickListen
     @Override
     public void onClick(View view) {
 
-        Log.i("sbl","======");
+        switch (view.getId()){
+            case R.id.tv_left:
+                Log.i("sbl","嘻嘻嘻嘻嘻嘻");
+                break;
+            case R.id.tv_right://以这个为例子
+                Log.i("sbl","哈哈啊哈哈哈哈哈哈");
+                new TvRightOnclick() {
+                    @Override
+                    public void setTvRightOnLongclickListener(String text) {
+                        tvRight.setText(text);
+                    }
+                };
+             //   tvRightOnclick.setTvRightOnLongclickListener();
+                break;
+            case R.id.iv_right:
+                break;
+        }
+
     }
 
 
