@@ -19,6 +19,7 @@ import android.widget.TextView;
 
 import com.zhuandian.qxe.R;
 import com.zhuandian.qxe.service.LoginActivity;
+import com.zhuandian.qxe.utils.MyView.HorizontalItem;
 import com.zhuandian.qxe.utils.myUtils.MyUtils;
 
 import cn.bmob.v3.Bmob;
@@ -34,10 +35,13 @@ public class SettingFragment extends Fragment implements View.OnClickListener, V
     private EditText username,phone,trade_local;
     private SharedPreferences sPreferences;
 
+    //小龙测试使用
+    private HorizontalItem horizontalItem;
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.fragment_setting,null);
+        view = inflater.inflate(R.layout.setting_1,null);
         ( (TextView)  getActivity().findViewById(R.id.navigation_text)).setText("软件设置");
         //初始化Bmob的SDK
         Bmob.initialize(getActivity(), getString(R.string.bmobkey));
@@ -47,9 +51,6 @@ public class SettingFragment extends Fragment implements View.OnClickListener, V
 
         initView();
         return view;
-
-
-
 
     }
 
@@ -62,6 +63,10 @@ public class SettingFragment extends Fragment implements View.OnClickListener, V
         (( LinearLayout)view.findViewById(R.id.cancel_click)).setOnClickListener(this);
         (( LinearLayout)view.findViewById(R.id.version)).setOnClickListener(this);
         (( LinearLayout)view.findViewById(R.id.update_zixishi)).setOnClickListener(this);
+
+        horizontalItem = (HorizontalItem) view.findViewById(R.id.horitem);
+
+        horizontalItem.setOnClickListener(this);
 
 //        view.findViewById(R.id.cancel_click).setOnClickListener(this);   //给设置的父控件设计点击事件，用户隐藏软键盘
         username = ((EditText) view.findViewById(R.id.user_name));
@@ -87,6 +92,10 @@ public class SettingFragment extends Fragment implements View.OnClickListener, V
     @Override
     public void onClick(View v) {
         switch (v.getId()){
+            case R.id.horitem:
+                Log.i("sbl","在fragment中处理的");
+                break;
+
             case R.id.logout :
                 BmobUser.logOut();   //清除缓存用户对象
                 Intent intent = new Intent(getActivity(),LoginActivity.class);

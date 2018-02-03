@@ -6,9 +6,13 @@
 
         <import type="com.zhuandian.qxe.base.binding.MvvmCommonAdapter" />
 
+        //bean原型是model模型，这个ViewMode引用的时候使用，编译的时候有setViewModel
+
         <variable
             name="viewModel"
             type="com.zhuandian.qxe.MainFrame.esGoods.SecondHandGoodsViewModel" />
+
+
     </data>
 
     <LinearLayout

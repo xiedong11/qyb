@@ -10,4 +10,14 @@
         <attr name="mycolor" format="color" />
         <attr name="scale" format="float" />
     </declare-styleable>
+
+
+    <!--*************组合控件元素***************-->
+    <declare-styleable name="HorizontalItem">
+        <attr name="tv_left" format="string"/>
+        <attr name="tv_right" format="string"/>
+        <attr name="iv_right" format="reference"/>
+    </declare-styleable>
+
+
 </resources>

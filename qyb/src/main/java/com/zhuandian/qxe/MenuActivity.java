@@ -13,10 +13,6 @@ import android.widget.Toast;
 import com.special.ResideMenu.ResideMenu;
 import com.special.ResideMenu.ResideMenuItem;
 import com.umeng.analytics.MobclickAgent;
-import com.umeng.socialize.ShareAction;
-import com.umeng.socialize.UMShareListener;
-import com.umeng.socialize.bean.SHARE_MEDIA;
-import com.umeng.socialize.media.UMImage;
 import com.zhuandian.qxe.MainFrame.AboutUsFragrant;
 import com.zhuandian.qxe.MainFrame.DataRunFragrant;
 import com.zhuandian.qxe.MainFrame.FeedBackFragment;
@@ -39,6 +35,7 @@ public class MenuActivity extends QYBActivity implements View.OnClickListener {
 
     private ResideMenu resideMenu;
     private MenuActivity mContext;
+
 
     //左右主Fragrant选项卡菜单
     private ResideMenuItem itemHome;
@@ -106,74 +103,19 @@ public class MenuActivity extends QYBActivity implements View.OnClickListener {
         findViewById(R.id.title_bar_right_menu).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                initSocialShare();
+//                resideMenu.openMenu(ResideMenu.DIRECTION_RIGHT);
+                Intent shareIntent = new Intent();
+                shareIntent.setAction(Intent.ACTION_SEND);
+                shareIntent.putExtra(Intent.EXTRA_TEXT, getString(R.string.Share_app_url));
+                shareIntent.setType("text/plain");
+
+                //设置分享列表的标题，并且每次都显示分享列表
+                startActivity(Intent.createChooser(shareIntent, "分享到"));
             }
         });
 
 
     }
-
-    /**
-     * 初始化分享功能
-     */
-    private void initSocialShare() {
-        new ShareAction(MenuActivity.this)
-                .withText(getString(R.string.Share_app_url))
-                .withMedia(new UMImage(MenuActivity.this, R.drawable.ic_launcher))
-                .setDisplayList(SHARE_MEDIA.SINA, SHARE_MEDIA.QQ, SHARE_MEDIA.WEIXIN, SHARE_MEDIA.ALIPAY)
-                .setCallback(shareListener)
-                .open();
-
-        //启用系统分享
-//                resideMenu.openMenu(ResideMenu.DIRECTION_RIGHT);
-//                Intent shareIntent = new Intent();
-//                shareIntent.setAction(Intent.ACTION_SEND);
-//                shareIntent.putExtra(Intent.EXTRA_TEXT, getString(R.string.Share_app_url));
-//                shareIntent.setType("text/plain");
-//
-//                //设置分享列表的标题，并且每次都显示分享列表
-//                startActivity(Intent.createChooser(shareIntent, "分享到"));
-    }
-
-    private UMShareListener shareListener = new UMShareListener() {
-        /**
-         * @descrption 分享开始的回调
-         * @param platform 平台类型
-         */
-        @Override
-        public void onStart(SHARE_MEDIA platform) {
-
-        }
-
-        /**
-         * @descrption 分享成功的回调
-         * @param platform 平台类型
-         */
-        @Override
-        public void onResult(SHARE_MEDIA platform) {
-            Toast.makeText(MenuActivity.this, "分享成功", Toast.LENGTH_LONG).show();
-        }
-
-        /**
-         * @descrption 分享失败的回调
-         * @param platform 平台类型
-         * @param t 错误原因
-         */
-        @Override
-        public void onError(SHARE_MEDIA platform, Throwable t) {
-            Toast.makeText(MenuActivity.this, "分享失败", Toast.LENGTH_LONG).show();
-        }
-
-        /**
-         * @descrption 分享取消的回调
-         * @param platform 平台类型
-         */
-        @Override
-        public void onCancel(SHARE_MEDIA platform) {
-            Toast.makeText(MenuActivity.this, "分享取消", Toast.LENGTH_LONG).show();
-
-        }
-    };
 
     @Override
     public boolean dispatchTouchEvent(MotionEvent ev) {
@@ -226,6 +168,7 @@ public class MenuActivity extends QYBActivity implements View.OnClickListener {
                 .setTransitionStyle(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
                 .commit();
     }
+
 
 
     public ResideMenu getResideMenu() {
