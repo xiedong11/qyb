@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:item= "http://schemas.android.com/apk/res-auto"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/setting_bg_color"
+    >
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="none"
+    >
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        >
+
+        <!--宋丙龙测试使用-->
+        <com.zhuandian.qxe.utils.MyView.HorizontalItem
+            android:id="@+id/horitem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            item:tv_left="你好啊"
+            item:tv_right="我是右边的哥们">
+
+        </com.zhuandian.qxe.utils.MyView.HorizontalItem>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#aaffffff"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center_vertical|left"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="center|left"
+                    android:text="用户名称"
+                    android:textColor="#212121"
+                    android:textSize="15sp" />
+
+                <EditText
+                    android:id="@+id/user_name"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:gravity="right|center"
+                    android:text="曲小二"
+                    style="@style/setting_edittext_text_style"
+                    />
+            </LinearLayout>
+
+            <include layout="@layout/divider_line" />
+
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center_vertical|left"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center|left"
+                    android:padding="5dp"
+                    android:text="联系方式"
+                    android:textColor="#212121"
+                    android:textSize="15sp" />
+
+                <EditText
+                    android:id="@+id/phone"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="4dp"
+                    android:gravity="right|center"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    style="@style/setting_edittext_text_style"
+                    android:text="18363758031" />
+            </LinearLayout>
+
+
+            <include layout="@layout/divider_line" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center_vertical|left"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center|left"
+                    android:padding="5dp"
+                    android:text="商品交易地点"
+                    android:textColor="#212121"
+                    android:textSize="15sp" />
+
+                <EditText
+                    android:id="@+id/trade_local"
+                    style="@style/setting_edittext_text_style"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="4dp"
+                    android:gravity="right|center"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:text="新大活" />
+            </LinearLayout>
+
+            <!--<include layout="@layout/divider_line" />-->
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical"
+            >
+
+            <LinearLayout
+                android:id="@+id/update_zixishi"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:background="#aaffffff"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="更新无课自习室"
+                    android:textColor="#212121"
+                    android:textSize="15sp" />
+
+                <!--设置图片靠右显示，可以设置scaleType属性-->
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:scaleType="fitEnd"
+                    android:src="@drawable/ic_setting_more" />
+
+            </LinearLayout>
+            <include layout="@layout/divider_line" />
+
+            <LinearLayout
+                android:id="@+id/cancel_click"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:background="#aaffffff"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="清理缓存记录"
+                    android:textColor="#212121"
+                    android:textSize="15sp" />
+
+                <!--设置图片靠右显示，可以设置scaleType属性-->
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:scaleType="fitEnd"
+                    android:src="@drawable/ic_setting_more" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/version"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:background="#99ffffff"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="版本更新"
+                android:textColor="#212121"
+                android:textSize="15sp" />
+
+            <!--设置图片靠右显示，可以设置scaleType属性-->
+            <TextView
+                android:id="@+id/versionname"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:text="未知版本"
+
+                />
+
+        </LinearLayout>
+
+        <include layout="@layout/divider_line" />
+
+        <LinearLayout
+            android:id="@+id/feedback"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:background="#99ffffff"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="反馈建议"
+                android:textColor="#212121"
+                android:textSize="15sp" />
+
+            <!--设置图片靠右显示，可以设置scaleType属性-->
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:scaleType="fitEnd"
+                android:src="@drawable/ic_setting_more" />
+
+        </LinearLayout>
+
+        <include layout="@layout/divider_line" />
+
+        <LinearLayout
+            android:id="@+id/aboutus"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:background="#99ffffff"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="关于我们"
+                android:textColor="#212121"
+                android:textSize="15sp" />
+
+            <!--设置图片靠右显示，可以设置scaleType属性-->
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:scaleType="fitEnd"
+                android:src="@drawable/ic_setting_more" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/logout"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="25dp"
+            android:layout_marginTop="25dp"
+            android:background="#88ffffff"
+            android:gravity="center"
+            android:text="注销登录"
+            android:textColor="#ff0000"
+            android:textSize="15sp" />
+
+    </LinearLayout>
+
+</ScrollView>
+
+</FrameLayout>
