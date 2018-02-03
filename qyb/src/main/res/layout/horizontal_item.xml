@@ -2,29 +2,33 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="48dp"
-    android:orientation="horizontal"
     android:layout_gravity="center"
-    android:gravity="center"
-    >
+    android:background="#aaffffff"
+    android:orientation="horizontal">
+
     <TextView
         android:id="@+id/tv_left"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:gravity="left|center_vertical"
+        android:padding="16dp"
         android:text="我是左面的文字"
-        />
+        android:textColor="#212121"
+        android:textSize="15sp" />
 
     <TextView
         android:id="@+id/tv_right"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:text="我是右面的文字"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
         android:layout_gravity="right"
         android:gravity="center"
-        android:visibility="gone"/>
+        android:text="我是右面的文字"
+        android:textColor="#212121"
+        android:textSize="15sp"
+        android:visibility="gone" />
 
     <ImageView
         android:id="@+id/iv_right"
@@ -34,7 +38,13 @@
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
         android:layout_gravity="right"
-        android:background="#ff00ff"
-        android:visibility="gone"/>
-
+        android:visibility="gone" />
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="#B6B6B6"
+        android:layout_alignParentBottom="true"
+        />
 </RelativeLayout>

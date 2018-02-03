@@ -39,7 +39,7 @@ public class SettingFragment extends Fragment implements View.OnClickListener, V
     //小龙测试使用
     private HorizontalItem horizontalItem;
 
-    TvRightOnclick tvRightOnclick ;
+
 
     @Nullable
     @Override
@@ -69,7 +69,12 @@ public class SettingFragment extends Fragment implements View.OnClickListener, V
 
         horizontalItem = (HorizontalItem) view.findViewById(R.id.horitem);
 
-       horizontalItem.setOnClickListener(this);
+       horizontalItem.setImgClickListener(new HorizontalItem.OnRightImgClickListener() {
+           @Override
+           public void onImgClick() {
+               System.out.println("-------img is click----------");
+           }
+       });
 
 
 

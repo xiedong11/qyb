@@ -14,9 +14,14 @@
 
     <!--*************组合控件元素***************-->
     <declare-styleable name="HorizontalItem">
-        <attr name="tv_left" format="string"/>
-        <attr name="tv_right" format="string"/>
-        <attr name="iv_right" format="reference"/>
+        <attr name="tv_left" format="string" />
+        <attr name="tv_right" format="string" />
+        <attr name="iv_right" format="reference" />
+        <attr name="right_type" format="enum">
+            <enum name="text" value="0" />
+            <enum name="img" value="1" />
+        </attr>
+
     </declare-styleable>
 
 

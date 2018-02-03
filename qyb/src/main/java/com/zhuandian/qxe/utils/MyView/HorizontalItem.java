@@ -3,98 +3,102 @@ package com.zhuandian.qxe.utils.MyView;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
-import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-
 import com.zhuandian.qxe.R;
 
-import java.lang.reflect.Type;
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 /**
  * Created by Administrator on 2018/2/2.
  */
 
-public class HorizontalItem extends RelativeLayout implements View.OnClickListener{
+public class HorizontalItem extends RelativeLayout {
 
-    private TextView tvLeft;
-    private TextView tvRight;
-    private ImageView ivRight;
-    TvRightOnclick tvRightOnclick;//接口
+    @BindView(R.id.tv_left)
+    TextView tvLeft;
+    @BindView(R.id.tv_right)
+    TextView tvRight;
+    @BindView(R.id.iv_right)
+    ImageView ivRight;
+    private int rightImageViewSrc;
+    private String rightTextStr;
+    private String leftTextStr;
+    private Context mContext;
+    private int rightType;
+    private static final int rightTypeText = 0;
+    private static final int rightTypeImg = 1;
+    private OnRightImgClickListener imgClickListener;
+    private OnRightTextClickListener textClickListener;
 
-//    public HorizontalItem(Context context) {
-//        super(context);
-//    }
+
+    public HorizontalItem(Context context) {
+        super(context, null);
+    }
 
     public HorizontalItem(Context context, AttributeSet attrs) {
         super(context, attrs);
-        // 将自定义组合控件的布局渲染成View
-        View view = View.inflate(context, R.layout.horizontal_item, this);
-    //  LayoutInflater.from(context).inflate(R.layout.horizontal_item,this,true);
-        tvLeft = (TextView) view.findViewById(R.id.tv_left);
-        tvRight = (TextView) view.findViewById(R.id.tv_right);
-        ivRight = (ImageView) findViewById(R.id.iv_right);
-
-//        if (flag){//为True，右边文字显示
-//            tvRight.setVisibility(VISIBLE);
-//        }else {
-//            ivRight.setVisibility(VISIBLE);
-//        }
-
-
-        //左边TextView
-        TypedArray typedArray = context.obtainStyledAttributes(attrs,R.styleable.HorizontalItem);
-        String leftText = typedArray.getString(R.styleable.HorizontalItem_tv_left);
-        tvLeft.setText(leftText);
-        tvLeft.setOnClickListener(this);
-
-
-        //右边TextView
-        String rightText = typedArray.getString(R.styleable.HorizontalItem_tv_right);
-        tvRight.setText(rightText);
-        tvRight.setOnClickListener(this);
-
-        //右边图片ImageView
-        int rightImageView = typedArray.getResourceId(R.styleable.HorizontalItem_iv_right, R.drawable.add);
-        ivRight.setBackgroundResource(rightImageView);
-        ivRight.setOnClickListener(this);
-
+        this.mContext = context;
+        TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.HorizontalItem);
+        leftTextStr = typedArray.getString(R.styleable.HorizontalItem_tv_left);
+        rightTextStr = typedArray.getString(R.styleable.HorizontalItem_tv_right);
+        rightImageViewSrc = typedArray.getResourceId(R.styleable.HorizontalItem_iv_right, R.drawable.add);
+        rightType = typedArray.getInt(R.styleable.HorizontalItem_right_type, 0);
         typedArray.recycle();
+        initView();
     }
 
-
-
-
-
-
-    @Override
-    public void onClick(View view) {
-
-        switch (view.getId()){
-            case R.id.tv_left:
-                Log.i("sbl","嘻嘻嘻嘻嘻嘻");
-                break;
-            case R.id.tv_right://以这个为例子
-                Log.i("sbl","哈哈啊哈哈哈哈哈哈");
-                new TvRightOnclick() {
-                    @Override
-                    public void setTvRightOnLongclickListener(String text) {
-                        tvRight.setText(text);
-                    }
-                };
-             //   tvRightOnclick.setTvRightOnLongclickListener();
-                break;
-            case R.id.iv_right:
-                break;
+    private void initView() {
+        ButterKnife.bind(this, View.inflate(mContext, R.layout.horizontal_item, this));
+        if (rightType == rightTypeText) {
+            tvRight.setVisibility(VISIBLE);
+            tvRight.setText(rightTextStr);
+        } else if (rightType == rightTypeImg) {
+            ivRight.setVisibility(VISIBLE);
+            ivRight.setImageResource(rightImageViewSrc);
         }
+        tvLeft.setText(leftTextStr);
 
+        ivRight.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (imgClickListener != null) {
+                    imgClickListener.onImgClick();
+                }
+
+            }
+        });
+
+        tvRight.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (textClickListener != null) {
+                    textClickListener.onTextClick();
+                }
+            }
+        });
     }
 
 
+    public void setImgClickListener(OnRightImgClickListener imgClickListener) {
+        this.imgClickListener = imgClickListener;
+    }
+
+    public void setTextClickListener(OnRightTextClickListener textClickListener) {
+        this.textClickListener = textClickListener;
+    }
+
+    public interface OnRightImgClickListener {
+        void onImgClick();
+    }
+
+    public interface OnRightTextClickListener {
+        void onTextClick();
+    }
 
 
 }
