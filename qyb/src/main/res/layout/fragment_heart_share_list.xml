@@ -1,37 +1,29 @@
-<android.support.design.widget.CoordinatorLayout android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
 
     <android.support.v4.widget.SwipeRefreshLayout
         android:id="@+id/heart_list_swipeRefresh"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <com.andexert.library.RippleView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            app:rv_color="@color/rippelColor"
-            app:rv_rippleDuration="70"
-            >
+
         <ListView
             android:id="@+id/heart_list"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
-        </com.andexert.library.RippleView>
     </android.support.v4.widget.SwipeRefreshLayout>
-
 
 
     <LinearLayout
         android:id="@+id/loading"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
         android:background="#fff"
-        >
-        <include layout="@layout/load_animation"/>
+        android:gravity="center">
+
+        <include layout="@layout/load_animation" />
     </LinearLayout>
 
     <!--app:layout_behavior="com.zhuandian.qxe.utils.myUtils.MyBehavior"-->

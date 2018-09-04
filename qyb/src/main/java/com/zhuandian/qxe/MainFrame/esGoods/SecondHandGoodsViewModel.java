@@ -3,6 +3,7 @@ package com.zhuandian.qxe.MainFrame.esGoods;
 import android.content.Intent;
 import android.databinding.ObservableArrayList;
 import android.os.Bundle;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.view.View;
 
@@ -25,13 +26,14 @@ import cn.bmob.v3.listener.FindListener;
  * author：xiedong
  * date：2018/1/17.
  */
-public class SecondHandGoodsViewModel extends BaseViewModel<FragmentSecondHandGoodsBinding> {
+public class SecondHandGoodsViewModel extends BaseViewModel<FragmentSecondHandGoodsBinding> implements SwipeRefreshLayout.OnRefreshListener {
     public ObservableArrayList<GoodsEntity> mDatas = new ObservableArrayList<>();
 
     @Override
     protected void initView() {
         binding.swipeRefresh.setRefreshing(false);
         binding.rvGoodsList.setLayoutManager(new LinearLayoutManager(activity));
+        binding.swipeRefresh.setOnRefreshListener(this);
         initData();
     }
 
@@ -46,6 +48,7 @@ public class SecondHandGoodsViewModel extends BaseViewModel<FragmentSecondHandGo
             @Override
             public void done(final List<GoodsEntity> data, BmobException e) {
                 if (e == null) {
+                    binding.swipeRefresh.setRefreshing(false);
                     if (data.size() == 0) {
                         //数据全部被加载，，已经没有可再加载的数据时，对footview的操作
                     }
@@ -70,5 +73,10 @@ public class SecondHandGoodsViewModel extends BaseViewModel<FragmentSecondHandGo
             }
         });
 
+    }
+
+    @Override
+    public void onRefresh() {
+        initData();
     }
 }
