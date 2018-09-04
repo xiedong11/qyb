@@ -1,14 +1,15 @@
 package com.zhuandian.qxe.ExtralModule;
 
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
+
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.widget.TextView;
 
 import com.zhuandian.qxe.R;
 
-public class EmployActivity extends ActionBarActivity {
+public class EmployActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

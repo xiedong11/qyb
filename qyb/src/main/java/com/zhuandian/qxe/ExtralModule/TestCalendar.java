@@ -2,7 +2,7 @@ package com.zhuandian.qxe.ExtralModule;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.widget.TextView;
@@ -12,7 +12,7 @@ import com.zhuandian.qxe.R;
 /**
  * Created by 谢栋 on 2016/10/20.
  */
-public class TestCalendar extends ActionBarActivity{
+public class TestCalendar extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

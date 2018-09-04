@@ -28,12 +28,6 @@ import com.zhuandian.qxe.MainFrame.esGoods.old.UploadGoodsFragment;
 import com.zhuandian.qxe.MainFrame.schoolNews.NewsMainActivity;
 import com.zhuandian.qxe.base.QYBActivity;
 
-import cn.bmob.push.BmobPush;
-import cn.bmob.v3.Bmob;
-import cn.bmob.v3.BmobInstallation;
-import cn.bmob.v3.listener.BmobUpdateListener;
-import cn.bmob.v3.update.BmobUpdateAgent;
-import cn.bmob.v3.update.UpdateResponse;
 
 public class MenuActivity extends QYBActivity implements View.OnClickListener {
 

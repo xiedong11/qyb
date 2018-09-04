@@ -4,7 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/QYB.iml" filepath="$PROJECT_DIR$/QYB.iml" />
       <module fileurl="file://$PROJECT_DIR$/qyb/qyb.iml" filepath="$PROJECT_DIR$/qyb/qyb.iml" />
-      <module fileurl="file://D:\workplace\QYB\qyb\qyb-qyb.iml" filepath="D:\workplace\QYB\qyb\qyb-qyb.iml" />
+      <module fileurl="file://$PROJECT_DIR$/qyb/qyb-qyb.iml" filepath="$PROJECT_DIR$/qyb/qyb-qyb.iml" />
     </modules>
   </component>
 </project>

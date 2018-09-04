@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.KeyEvent;
@@ -20,7 +20,7 @@ import com.zhuandian.qxe.R;
  * 考研计划，研途有你日程表安排类
  * Created by 谢栋 on 2016/10/20.
  */
-public class Postgraduate_Plan extends ActionBarActivity implements View.OnLongClickListener {
+public class Postgraduate_Plan extends AppCompatActivity implements View.OnLongClickListener {
     private EditText class_12;
     private EditText class_34;
     private EditText class_57;

@@ -2,7 +2,7 @@ package com.zhuandian.qxe.ExtralModule;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.KeyEvent;
@@ -18,7 +18,7 @@ import cn.pedant.SweetAlert.SweetAlertDialog;
 /**
  * Created by 谢栋 on 2016/10/20.
  */
-public class CommunityActivity extends ActionBarActivity{
+public class CommunityActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

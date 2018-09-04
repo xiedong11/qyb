@@ -16,6 +16,7 @@ import org.json.JSONObject;
 
 import cn.bmob.push.PushConstants;
 
+
 /**
  * Created by 谢栋 on 2016/10/2.
  */
@@ -25,7 +26,7 @@ public class MyPushMessageReceiver extends BroadcastReceiver {
     @TargetApi(Build.VERSION_CODES.JELLY_BEAN)  //版本兼容问题
     @Override
     public void onReceive(Context context, Intent intent) {
-        // TODO Auto-generated method stub
+
         if (intent.getAction().equals(PushConstants.ACTION_MESSAGE)) {
             Log.d("xiedong", "客户端收到推送内容：" + intent.getStringExtra("msg"));
 

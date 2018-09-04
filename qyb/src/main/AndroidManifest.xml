@@ -71,6 +71,17 @@
             android:value="qyb"
             android:name="UMENG_CHANNEL"/>
 
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="${applicationId}"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/files_path" />
+        </provider>
+
         <!-- 在线更新的activity -->
         <activity
             android:name="cn.bmob.v3.update.UpdateDialogActivity"
@@ -184,13 +195,23 @@
 
         <!-- 用于进程保活 -->
         <service
+            android:label="PushService"
+            android:name="cn.bmob.push.lib.service.PushService"
+            android:process=":bmobpush"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="cn.bmob.push.lib.service.PushService"/>
+            </intent-filter>
+        </service>
+
+        <!-- 用于进程保活 -->
+        <service
             android:name="cn.bmob.push.lib.service.PushNotifyService"
             android:process=":bmobpush" >
         </service>
 
         <receiver android:name="cn.bmob.push.PushReceiver" >
             <intent-filter>
-
                 <!-- 系统启动完成后会调用 -->
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
                 <!-- 解锁完成后会调用 -->
@@ -200,10 +221,10 @@
             </intent-filter>
         </receiver>
 
-        <!-- 第四部中创建的消息接收器，在这里进行注册 -->
-        <receiver android:name=".service.MyPushMessageReceiver" >
-            <intent-filter>
-                <action android:name="cn.bmob.push.action.MESSAGE" />
+        <!-- 第3步中创建的消息接收器，在这里进行注册 -->
+        <receiver android:name=".service.MyPushMessageReceiver">
+            <intent-filter >
+                <action android:name="cn.bmob.push.action.MESSAGE"/>
             </intent-filter>
         </receiver>
 
@@ -212,7 +233,6 @@
             android:name="cn.bmob.push.PushNotifyReceiver"
             android:process=":bmobpush" >
             <intent-filter>
-
                 <!-- 接收心跳广播的action -->
                 <action android:name="cn.bmob.push.action.HEARTBEAT" />
                 <!-- 接收唤醒广播的action -->

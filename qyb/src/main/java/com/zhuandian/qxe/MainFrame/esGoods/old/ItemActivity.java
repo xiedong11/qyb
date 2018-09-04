@@ -5,7 +5,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.util.LruCache;
@@ -43,7 +43,7 @@ import cn.pedant.SweetAlert.SweetAlertDialog;
 /**
  * Created by 谢栋 on 2016/9/1.
  */
-public class ItemActivity extends ActionBarActivity {
+public class ItemActivity extends AppCompatActivity {
 
     private TextView name;
     private TextView phone;

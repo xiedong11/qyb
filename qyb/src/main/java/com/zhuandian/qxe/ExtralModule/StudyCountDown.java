@@ -3,7 +3,7 @@ package com.zhuandian.qxe.ExtralModule;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Vibrator;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.KeyEvent;
@@ -22,7 +22,7 @@ import cn.pedant.SweetAlert.SweetAlertDialog;
 /**
  * Created by 谢栋 on 2016/10/21.
  */
-public class StudyCountDown extends ActionBarActivity  {
+public class StudyCountDown extends AppCompatActivity {
 
     private PickerView minute_pv;
     private PickerView second_pv;

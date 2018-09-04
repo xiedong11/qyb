@@ -3,6 +3,7 @@ package com.zhuandian.qxe.service;
 import android.app.Application;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.support.multidex.MultiDex;
 import android.util.Log;
 
 import com.umeng.socialize.PlatformConfig;
@@ -10,9 +11,15 @@ import com.umeng.socialize.UMShareAPI;
 import com.zhuandian.qxe.R;
 import com.zhuandian.qxe.chat.CustomUserProvider;
 
+import java.util.logging.Logger;
+
 import cn.bmob.push.BmobPush;
+import cn.bmob.statistics.AppStat;
 import cn.bmob.v3.Bmob;
 import cn.bmob.v3.BmobInstallation;
+import cn.bmob.v3.BmobInstallationManager;
+import cn.bmob.v3.InstallationListener;
+import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.BmobUpdateListener;
 import cn.bmob.v3.update.BmobUpdateAgent;
 import cn.bmob.v3.update.UpdateResponse;
@@ -37,6 +44,12 @@ public class QYBApplication extends Application {
 
 
     @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(base);
+        MultiDex.install(base);
+    }
+
+    @Override
     public void onCreate() {
         super.onCreate();
 
@@ -47,9 +60,18 @@ public class QYBApplication extends Application {
         //初始化Bmob的SDK
         Bmob.initialize(this, getString(R.string.bmobkey));
         //初始化后台统计功能
-        cn.bmob.statistics.AppStat.i(getString(R.string.bmobkey), null);
+        AppStat.i(getString(R.string.bmobkey), null);
         // 使用推送服务时的初始化操作
-        BmobInstallation.getCurrentInstallation().save();
+        BmobInstallationManager.getInstance().initialize(new InstallationListener<BmobInstallation>() {
+            @Override
+            public void done(BmobInstallation bmobInstallation, BmobException e) {
+                if (e == null) {
+                    System.out.println(bmobInstallation.getObjectId() + "-" + bmobInstallation.getInstallationId());
+                } else {
+                    System.out.println(e.getMessage());
+                }
+            }
+        });
         // 启动推送服务
         BmobPush.startWork(this);
         //在线更新初始化
